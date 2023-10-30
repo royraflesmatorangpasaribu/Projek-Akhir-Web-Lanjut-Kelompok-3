@@ -7,3 +7,6 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Home::index');
 $routes->get('/superadmin', 'Home::dashboard_super_admin');
+$routes->get('/parents', 'Home::parents');
+$routes->get('/students', 'Home::students');
+$routes->get('/teacher', 'Home::teacher');
