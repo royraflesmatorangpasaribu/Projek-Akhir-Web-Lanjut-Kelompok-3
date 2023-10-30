@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Dashboard - Super Admin</title>
+  <title>Students - Super Admin</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -73,7 +73,7 @@
       <li class="nav-item">
         <a class="nav-link " href="<?php echo base_url('superadmin'); ?>">
           <i class="bi bi-grid"></i>
-          <span>Dashboard</span>
+          <span>Students</span>
         </a>
       </li><!-- End Dashboard Nav -->
 
@@ -117,13 +117,6 @@
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="#">
-          <i class="bi bi-envelope"></i>
-          <span>Information</span>
-        </a>
-      </li><!-- End Contact Page Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#">
           <i class="bi bi-box-arrow-in-right"></i>
           <span>Logout</span>
         </a>
@@ -131,7 +124,7 @@
 
     </ul>
 
-    </aside><!-- End Sidebar-->
+  </aside><!-- End Sidebar-->
   <main id="main" class="main">
     <div class="pagetitle">
       <h1>Dashboard</h1>
@@ -142,9 +135,6 @@
         </ol>
       </nav>
     </div><!-- End Page Title -->
-    <center>
-    <img src="<?php echo base_url('assets/img/greet.png'); ?>" alt="" style="height: 450px; width: 850px;"><br><br>
-    </center>
     <section class="section dashboard">
       <div class="row">
 
@@ -157,7 +147,7 @@
               <div class="card recent-sales overflow-auto">
 
                 <div class="card-body">
-                  <h5 class="card-title">Teachers Table <span>| Today</span></h5>
+                  <h5 class="card-title">Student Table <span>| Today</span></h5>
 
                   <table class="table table-borderless datatable">
                     <thead>
@@ -166,6 +156,7 @@
                         <th scope="col">Nama</th>
                         <th scope="col">Username</th>
                         <th scope="col">Password</th>
+                        <th scope="col">Aksi</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -174,115 +165,40 @@
                         <td>Ibrahim</td>
                         <td>@ibrahim.id</td>
                         <td>1234</td>
+                        <td>
+                          <a href="#" type="button" class="btn btn-primary">Delete</a>
+                          <a href="#" type="button" class="btn btn-info">Edit</a>                
+                        </td>
                       </th>
                       <tr>
                         <th scope="row">2</th>
                         <td>Maulana</td>
                         <td>@maulana.id</td>
                         <td>456</td>
+                        <td>
+                          <a href="#" type="button" class="btn btn-primary">Delete</a>
+                          <a href="#" type="button" class="btn btn-info">Edit</a>                
+                        </td>
                       </tr>
                       <tr>
                         <th scope="row">3</th>
                         <td>Hasan</td>
                         <td>@hasan.id</td>
                         <td>9263</td>
+                        <td>
+                          <a href="#" type="button" class="btn btn-primary">Delete</a>
+                          <a href="#" type="button" class="btn btn-info">Edit</a>                
+                        </td>
+                      </tr>
+                      <tr>
+                      <button type="button" class="btn btn-primary">Add Data</button>
                       </tr>
                     </tbody>
                   </table>
-                  
-                  <a type="button" class="btn btn-primary" href="<?php echo base_url('teacher'); ?>">Detail</a>
                 </div>
 
               </div>
             </div><!-- End Teacher Table -->
-
-
-            <!-- Student Tabel -->
-            <div class="col-12">
-              <div class="card recent-sales overflow-auto">
-
-                <div class="card-body">
-                  <h5 class="card-title">Student Table <span>| Today</span></h5>
-
-                  <table class="table table-borderless datatable">
-                  <thead>
-                      <tr>
-                        <th scope="col">No</th>
-                        <th scope="col">Nama</th>
-                        <th scope="col">Username</th>
-                        <th scope="col">Password</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Ibrahim</td>
-                        <td>@ibrahim.id</td>
-                        <td>1234</td>
-                      </th>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Maulana</td>
-                        <td>@maulana.id</td>
-                        <td>456</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td>Hasan</td>
-                        <td>@hasan.id</td>
-                        <td>9263</td>
-                      </tr>
-                    </tbody>
-
-                  </table>
-                  <a type="button" class="btn btn-primary" href="<?php echo base_url('student'); ?>">Detail</a>
-                </div>
-
-              </div>
-            </div><!-- End Student Table -->
-            
-            <!-- Parents Tabel -->
-            <div class="col-12">
-              <div class="card recent-sales overflow-auto">
-
-                <div class="card-body">
-                  <h5 class="card-title">Parents Table <span>| Today</span></h5>
-
-                  <table class="table table-borderless datatable">
-                  <thead>
-                      <tr>
-                        <th scope="col">No</th>
-                        <th scope="col">Nama</th>
-                        <th scope="col">Username</th>
-                        <th scope="col">Password</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Ibrahim</td>
-                        <td>@ibrahim.id</td>
-                        <td>1234</td>
-                      </th>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Maulana</td>
-                        <td>@maulana.id</td>
-                        <td>456</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td>Hasan</td>
-                        <td>@hasan.id</td>
-                        <td>9263</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                  <a href="<?php echo base_url('parents'); ?>" type="button" class="btn btn-primary">Detail</a>
-                </div>
-
-              </div>
-            </div><!-- End Parents Table -->
           </div>
         </div><!-- End Left side columns -->
 
@@ -290,43 +206,7 @@
         <div class="col-lg-4">
 
           
-          <!-- News & Updates Traffic -->
-          <div class="card">
-            <div class="filter">
-            </div>
-
-            <div class="card-body pb-0">
-              <h5 class="card-title">News &amp; Updates <span>| Today</span></h5>
-
-              <div class="news">
-                <div class="post-item clearfix">
-                  <img src="<?php echo base_url('assets/img/news.png'); ?>" alt="">
-                  <h4><a href="#">Judul Berita</a></h4>
-                  <p>...</p>
-                </div>
-
-                <div class="news">
-                  <div class="post-item clearfix">
-                    <img src="<?php echo base_url('assets/img/news.png'); ?>" alt="">
-                    <h4><a href="#">Judul Berita</a></h4>
-                    <p>...</p>
-                  </div>
-
-                  <div class="news">
-                    <div class="post-item clearfix">
-                      <img src="<?php echo base_url('assets/img/news.png'); ?>" alt="">
-                      <h4><a href="#">Judul Berita</a></h4>
-                      <p>...</p>
-                    </div>
-
-                    <div class="news">
-                      <div class="post-item clearfix">
-                        <img src="<?php echo base_url('assets/img/news.png'); ?>" alt="">
-                        <h4><a href="#">Judul Berita</a></h4>
-                        <p>...</p>
-                      </div>         
-            </div>
-          </div><!-- End News & Updates -->
+          
         </div><!-- End Right side columns -->
       </div>
     </section>
