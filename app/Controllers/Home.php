@@ -8,4 +8,24 @@ class Home extends BaseController
     {
         return view('welcome_message');
     }
+
+    public function dashboard_super_admin(): string
+    {
+        return view('dashboard_super_admin');
+    }
+
+    public function students(): string
+    {
+        return view('students');
+    }
+
+    public function parents(): string
+    {
+        return view('parents');
+    }
+
+    public function teacher(): string
+    {
+        return view('teacher');
+    }
 }
