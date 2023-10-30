@@ -71,30 +71,29 @@
   <aside id="sidebar" class="sidebar">
     <ul class="sidebar-nav" id="sidebar-nav">
       <li class="nav-item">
-        <a class="nav-link " href="<?php echo base_url('superadmin'); ?>">
-          <i class="bi bi-grid"></i>
+        <a class="nav-link collapsed" href="<?php echo base_url('superadmin'); ?>">
+          <i class="bi bi-layout-text-window-reverse"></i>
           <span>Dashboard</span>
         </a>
       </li><!-- End Dashboard Nav -->
 
-      
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+        <a class="nav-link " data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-layout-text-window-reverse"></i><span>Users</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-        <li>
+        <ul id="tables-nav" class="nav-content collapse show" data-bs-parent="#sidebar-nav">
+          <li>
             <a href="<?php echo base_url('teacher'); ?>">
               <i class="bi bi-circle"></i><span>Teachers Tables</span>
             </a>
           </li>
           <li>
             <a href="<?php echo base_url('students'); ?>">
-              <i class="bi bi-circle"></i><span>Student Tables</span>
+              <i class="bi bi-circle"></i><span>Students Tables</span>
             </a>
           </li>
           <li>
-            <a href="<?php echo base_url('parents'); ?>">
+            <a href="<?php echo base_url('parents'); ?>" class="active">
               <i class="bi bi-circle"></i><span>Parents Tables</span>
             </a>
           </li>

@@ -71,26 +71,26 @@
   <aside id="sidebar" class="sidebar">
     <ul class="sidebar-nav" id="sidebar-nav">
       <li class="nav-item">
-        <a class="nav-link " href="<?php echo base_url('superadmin'); ?>">
-          <i class="bi bi-grid"></i>
-          <span>Teacher</span>
+        <a class="nav-link collapsed" href="<?php echo base_url('superadmin'); ?>">
+          <i class="bi bi-layout-text-window-reverse"></i>
+          <span>Dashboard</span>
         </a>
       </li><!-- End Dashboard Nav -->
 
       
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+        <a class="nav-link " data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-layout-text-window-reverse"></i><span>Users</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-        <li>
-            <a href="<?php echo base_url('teacher'); ?>">
+        <ul id="tables-nav" class="nav-content collapse show" data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="<?php echo base_url('teacher'); ?>" class="active">
               <i class="bi bi-circle"></i><span>Teachers Tables</span>
             </a>
           </li>
           <li>
-            <a href="<?php echo base_url('students'); ?>">
-              <i class="bi bi-circle"></i><span>Student Tables</span>
+            <a href="<?php echo base_url('students'); ?>" >
+              <i class="bi bi-circle"></i><span>Students Tables</span>
             </a>
           </li>
           <li>
@@ -100,6 +100,7 @@
           </li>
         </ul>
       </li><!-- End Tables Nav -->
+
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
@@ -127,17 +128,15 @@
   </aside><!-- End Sidebar-->
   <main id="main" class="main">
     <div class="pagetitle">
-      <h1>Dashboard</h1>
+      <h1>Teacher</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="#">Home</a></li>
-          <li class="breadcrumb-item active" href="<?php echo base_url('dashboard_super_admin'); ?>">Dashboard</li>
+          <li class="breadcrumb-item active" href="<?php echo base_url('dashboard_super_admin'); ?>">Teacher</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
-    <center>
-    <img src="<?php echo base_url('assets/img/greet.png'); ?>" alt="" style="height: 450px; width: 850px;"><br><br>
-    </center>
+
     <section class="section dashboard">
       <div class="row">
 
