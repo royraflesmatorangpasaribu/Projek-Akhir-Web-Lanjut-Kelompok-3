@@ -28,4 +28,9 @@ class Home extends BaseController
     {
         return view('teacher');
     }
+
+    public function login(): string
+    {
+        return view('login');
+    }
 }
