@@ -33,4 +33,9 @@ class Home extends BaseController
     {
         return view('login');
     }
+
+    public function register(): string
+    {
+        return view('register');
+    }
 }
