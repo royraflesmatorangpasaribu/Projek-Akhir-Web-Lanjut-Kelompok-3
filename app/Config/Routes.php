@@ -11,3 +11,4 @@ $routes->get('/parents', 'Home::parents');
 $routes->get('/students', 'Home::students');
 $routes->get('/teacher', 'Home::teacher');
 $routes->get('/login', 'Home::login');
+$routes->get('/register', 'Home::register');
