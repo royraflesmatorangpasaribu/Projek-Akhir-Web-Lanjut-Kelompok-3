@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controllers;
+use App\Models\ClassModel;
 
 class Home extends BaseController
 {
@@ -22,6 +23,16 @@ class Home extends BaseController
     public function parents(): string
     {
         return view('parents');
+    }
+
+    public function class(): string
+    {
+        return view('class');
+    }
+
+    public function create_class(): string
+    {
+        return view('create_class');
     }
 
     public function teacher(): string
