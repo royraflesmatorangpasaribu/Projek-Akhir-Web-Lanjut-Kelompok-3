@@ -17,7 +17,34 @@ class Home extends BaseController
 
     public function students(): string
     {
-        return view('students');
+        $class = [
+            [
+                'id'    => 1,
+                'name_class'    => 'A'
+            ],
+
+            [
+                'id'    => 2,
+                'name_class'    => 'B'
+            ],
+
+            [
+                'id'    => 3,
+                'name_class'    => 'C'
+            ],
+
+            [
+                'id'    => 4,
+                'name_class'    => 'D'
+            ],
+            
+        ];
+
+        $data = [
+            'class'     => $class,
+        ];
+
+        return view('students', $data);
     }
 
     public function parents(): string
