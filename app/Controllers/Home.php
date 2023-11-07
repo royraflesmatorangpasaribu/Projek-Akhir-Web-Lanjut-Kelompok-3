@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controllers;
+use App\Models\ClassModel;
 
 class Home extends BaseController
 {
@@ -16,7 +17,34 @@ class Home extends BaseController
 
     public function students(): string
     {
-        return view('students');
+        $class = [
+            [
+                'id'    => 1,
+                'name_class'    => 'A'
+            ],
+
+            [
+                'id'    => 2,
+                'name_class'    => 'B'
+            ],
+
+            [
+                'id'    => 3,
+                'name_class'    => 'C'
+            ],
+
+            [
+                'id'    => 4,
+                'name_class'    => 'D'
+            ],
+            
+        ];
+
+        $data = [
+            'class'     => $class,
+        ];
+
+        return view('students', $data);
     }
 
     public function parents(): string
@@ -24,18 +52,58 @@ class Home extends BaseController
         return view('parents');
     }
 
+    public function class(): string
+    {
+        return view('class');
+    }
+
+    public function create_class(): string
+    {
+        return view('create_class');
+    }
+
     public function teacher(): string
     {
-        return view('teacher');
+
+        $class = [
+            [
+                'id'    => 1,
+                'name_class'    => 'A'
+            ],
+
+            [
+                'id'    => 2,
+                'name_class'    => 'B'
+            ],
+
+            [
+                'id'    => 3,
+                'name_class'    => 'C'
+            ],
+
+            [
+                'id'    => 4,
+                'name_class'    => 'D'
+            ],
+            
+        ];
+
+        $data = [
+            'class'     => $class,
+        ];
+
+        return view('teacher', $data);
     }
 
-    public function login(): string
-    {
-        return view('login');
-    }
+    public function create(){
+        $classModel = new ClassModel();
 
-    public function register(): string
-    {
-        return view('register');
+        $class = $classModel->getClass();
+
+        $data = [
+            'kelas' => $class,
+        ];
+
+        return view('teacher', $data);
     }
 }

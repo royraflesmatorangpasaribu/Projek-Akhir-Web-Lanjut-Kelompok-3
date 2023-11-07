@@ -10,5 +10,7 @@ $routes->get('/superadmin', 'Home::dashboard_super_admin');
 $routes->get('/parents', 'Home::parents');
 $routes->get('/students', 'Home::students');
 $routes->get('/teacher', 'Home::teacher');
+$routes->get('/class', 'Home::class');
+$routes->get('/create_class', 'Home::create_class');
 $routes->get('/login', 'Home::login');
 $routes->get('/register', 'Home::register');
