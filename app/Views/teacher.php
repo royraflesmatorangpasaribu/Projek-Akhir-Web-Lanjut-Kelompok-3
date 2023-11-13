@@ -130,7 +130,7 @@
               <div class="card recent-sales overflow-auto">
 
                 <div class="card-body">
-                  <h5 class="card-title">Users Table <span>| Today</span></h5>
+                  <h5 class="card-title">Teachers Table <span>| Today</span></h5>
 
                   <table class="table table-borderless datatable">
                     <thead>
