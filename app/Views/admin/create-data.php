@@ -43,7 +43,7 @@
                     <label for="role" class="col-sm-10 col-form-label">Role</label>
                     <select name="role" id="role" class="form-select" >
                         <option selected hidden value="<?= old('role') ?>">
-                            <?= ($old_name == '')? 'Pilih Kelas' : $old_name?>
+                            <?= ($old_name == '')? 'Pilih Role' : $old_name?>
                         </option>
                         <?php
                             

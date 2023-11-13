@@ -29,42 +29,42 @@ class Home extends BaseController
         return view('dashboard_super_admin');
     }
 
-    public function students(): string
-    {
-        $class = [
-            [
-                'id'    => 1,
-                'name_class'    => 'A'
-            ],
+    // public function students(): string
+    // {
+    //     $class = [
+    //         [
+    //             'id'    => 1,
+    //             'name_class'    => 'A'
+    //         ],
 
-            [
-                'id'    => 2,
-                'name_class'    => 'B'
-            ],
+    //         [
+    //             'id'    => 2,
+    //             'name_class'    => 'B'
+    //         ],
 
-            [
-                'id'    => 3,
-                'name_class'    => 'C'
-            ],
+    //         [
+    //             'id'    => 3,
+    //             'name_class'    => 'C'
+    //         ],
 
-            [
-                'id'    => 4,
-                'name_class'    => 'D'
-            ],
+    //         [
+    //             'id'    => 4,
+    //             'name_class'    => 'D'
+    //         ],
             
-        ];
+    //     ];
 
-        $data = [
-            'class'     => $class,
-        ];
+    //     $data = [
+    //         'class'     => $class,
+    //     ];
 
-        return view('students', $data);
-    }
+    //     return view('students', $data);
+    // }
 
-    public function parents(): string
-    {
-        return view('parents');
-    }
+    // public function parents(): string
+    // {
+    //     return view('parents');
+    // }
 
     public function class(): string
     {   
@@ -172,7 +172,7 @@ class Home extends BaseController
         return view('teacher', $data);
     }
 
-    public function student(): string
+    public function students(): string
 
     {
         $this->builder->select('users.id as userid, username, email, name');
@@ -200,7 +200,7 @@ class Home extends BaseController
         return view('students', $data);
     }
 
-    public function parent(): string
+    public function parents(): string
 
     {
         $this->builder->select('users.id as userid, username, email, name');

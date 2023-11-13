@@ -156,7 +156,7 @@
                     </tbody>
                   </table>
                   
-                  <a type="button" class="btn btn-primary" href="<?php echo base_url('admin/create_data'); ?>">Add Data</a>
+                  <!-- <a type="button" class="btn btn-primary" href="<?php echo base_url('admin/create_data'); ?>">Add Data</a> -->
                 </div>
 
               </div>
