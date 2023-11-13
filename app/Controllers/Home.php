@@ -2,6 +2,9 @@
 
 namespace App\Controllers;
 use App\Models\ClassModel;
+use Config\Auth;
+use App\Models\UserModel;
+use Myth\Auth\Models\GroupModel;
 
 class Home extends BaseController
 {
@@ -168,4 +171,62 @@ class Home extends BaseController
 
         return view('teacher', $data);
     }
+
+    public function student(): string
+
+    {
+        $this->builder->select('users.id as userid, username, email, name');
+        $this->builder->join('auth_groups_users', 'auth_groups_users.user_id = users.id');
+        $this->builder->join('auth_groups', 'auth_groups.id = auth_groups_users.group_id');
+        $this->builder->where('auth_groups.name', 'students');
+
+        
+        $query = $this->builder->get();
+
+        $data['users']  = $query->getResult();
+
+        return view('students', $data);
+    }
+
+    public function createstudent(){
+        $classModel = new ClassModel();
+
+        $class = $classModel->getClass();
+
+        $data = [
+            'kelas' => $class,
+        ];
+
+        return view('students', $data);
+    }
+
+    public function parent(): string
+
+    {
+        $this->builder->select('users.id as userid, username, email, name');
+        $this->builder->join('auth_groups_users', 'auth_groups_users.user_id = users.id');
+        $this->builder->join('auth_groups', 'auth_groups.id = auth_groups_users.group_id');
+        $this->builder->where('auth_groups.name', 'parents');
+
+        
+        $query = $this->builder->get();
+
+        $data['users']  = $query->getResult();
+
+        return view('parents', $data);
+    }
+
+    public function createparent(){
+        $classModel = new ClassModel();
+
+        $class = $classModel->getClass();
+
+        $data = [
+            'kelas' => $class,
+        ];
+
+        return view('parents', $data);
+    }
+
+    
 }
