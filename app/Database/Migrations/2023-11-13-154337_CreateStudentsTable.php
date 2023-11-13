@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class CreateTeacherTable extends Migration
+class CreateStudentsTable extends Migration
 {
     public function up()
     {
@@ -21,7 +21,7 @@ class CreateTeacherTable extends Migration
                 'constraint'        => '50',
             ],
 
-            'nip'   => [
+            'class'   => [
                 'type'              => 'INT',
                 'constraint'        => 20,
             ], 
@@ -31,16 +31,27 @@ class CreateTeacherTable extends Migration
                 'constraint'        => '50',
             ],
 
+            'email'  => [
+                'type'              => 'VARCHAR',
+                'constraint'        => '50',
+            ],
+
             'password'  => [
                 'type'              => 'INT',
                 'constraint'        => 20,
             ],
 
-            'id_class' => [
-                'type'              => 'INT',
-                'constraint'        => 5,
-                'unsigned'          => true,
-            ],
+            'group_id' => [
+                'type' => 'int', 
+                'constraint' => 11, 
+                'unsigned' => true, 
+                'default' => 0],
+
+            'user_id' => [
+                'type' => 'int', 
+                'constraint' => 11, 
+                'unsigned' => true, 
+                'default' => 0],
 
             'created_at' => [
                 'type'              => 'DATETIME',
@@ -59,13 +70,14 @@ class CreateTeacherTable extends Migration
 
         ]);
 
-        $this->forge->addKey('id', true, true);
-        $this->forge->addForeignKey('id_class', 'class', 'id');
-        $this->forge->createTable('teacher');
+        $this->forge->addKey('id', true,true);
+        $this->forge->addForeignKey('group_id', 'auth_groups', 'id');
+        $this->forge->addForeignKey('user_id', 'users', 'id');
+        $this->forge->createTable('students');
     }
 
     public function down()
     {
-        $this->forge->dropTable('teacher', true);
+        $this->forge->dropTable('students', true);
     }
 }

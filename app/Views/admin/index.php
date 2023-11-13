@@ -1,7 +1,6 @@
 <?= $this->extend('templates/index'); ?>
 <?= $this->section('content'); ?>
 
-
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top d-flex align-items-center">
 
@@ -29,7 +28,7 @@
         </li><!-- End Search Icon-->
 
         <li class="nav-item dropdown pe-3">
-          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="" data-bs-toggle="dropdown">
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
             <img src="assets/img/foto_def.png" alt="Profile" class="rounded-circle">
             <span class="">Super Admin</span>
           </a><!-- End Profile Iamge Icon -->
@@ -75,7 +74,7 @@
       </li><!-- End Tables Nav -->
 
       <li class="nav-item">
-        <a class="nav-link " href="/class">
+        <a class="nav-link "  href="/class">
           <i class="bi bi-card-list"></i><span>Class</span><i class=""></i>
         </a>
       </li><!-- End Charts Nav -->
@@ -111,7 +110,7 @@
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="#">Home</a></li>
-          <li class="breadcrumb-item active" href="<?php echo base_url('admin'); ?>">Dashboard</li>
+          <li class="breadcrumb-item active" href="<?php echo base_url('dashboard_super_admin'); ?>">Dashboard</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -122,7 +121,7 @@
       <div class="row">
 
         <!-- Left side columns -->
-        <div class="col-lg-8">
+        <div class="col-lg-12">
           <div class="row">
 
             <!-- Teacher Tabel -->
@@ -139,7 +138,8 @@
                         <th scope="col">Username</th>
                         <th scope="col">Email</th>
                         <th scope="col">Role</th>
-                         </tr>
+                        <th scope="col justify-content-center text-center" >&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Action</th>
+                      </tr>
                     </thead>
                     <tbody>
                         <?php $i = 1; ?>
@@ -149,8 +149,17 @@
                                 <td><?= $user->username; ?></td>
                                 <td><?= $user->email; ?></td>
                                 <td><?= $user->name; ?></td>
+                                <td > 
+                                  <div class="d-flex ">
+                                    <a href="<?= base_url('admin/edit?id=' . $user->userid) ?>" class="btn btn-success" style="width:100px;">Edit</a>
                                
-                              
+                                <form method="post" action="<?= site_url('/admin/delete/' . $user->userid) ?>" >
+                                  <input type="hidden" name="_method" value="DELETE">
+                                      <?= csrf_field() ?>
+                                    <button type="submit" name="delete" class="btn btn-danger" style="width:100px;">Delete</button>
+                                </form>
+                                  </div>
+                                </td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
@@ -166,48 +175,7 @@
           </div>
         </div><!-- End Left side columns -->
 
-        <!-- Right side columns -->
-        <div class="col-lg-4">
-
-          
-          <!-- News & Updates Traffic -->
-          <div class="card">
-            <div class="filter">
-            </div>
-
-            <div class="card-body pb-0">
-              <h5 class="card-title">News &amp; Updates <span>| Today</span></h5>
-
-              <div class="news">
-                <div class="post-item clearfix">
-                  <img src="<?php echo base_url('assets/img/news.png'); ?>" alt="">
-                  <h4><a href="#">Judul Berita</a></h4>
-                  <p>...</p>
-                </div>
-
-                <div class="news">
-                  <div class="post-item clearfix">
-                    <img src="<?php echo base_url('assets/img/news.png'); ?>" alt="">
-                    <h4><a href="#">Judul Berita</a></h4>
-                    <p>...</p>
-                  </div>
-
-                  <div class="news">
-                    <div class="post-item clearfix">
-                      <img src="<?php echo base_url('assets/img/news.png'); ?>" alt="">
-                      <h4><a href="#">Judul Berita</a></h4>
-                      <p>...</p>
-                    </div>
-
-                    <div class="news">
-                      <div class="post-item clearfix">
-                        <img src="<?php echo base_url('assets/img/news.png'); ?>" alt="">
-                        <h4><a href="#">Judul Berita</a></h4>
-                        <p>...</p>
-                      </div>         
-            </div>
-          </div><!-- End News & Updates -->
-        </div><!-- End Right side columns -->
+        
       </div>
     </section>
 
