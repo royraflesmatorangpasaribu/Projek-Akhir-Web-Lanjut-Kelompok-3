@@ -25,13 +25,15 @@
     
                   <!-- Multi Columns Form -->
                   <form class="row g-3" action="" method="post">
+                  <input type="hidden" id="id" name="id" value = "<?= $val-> id; ?>" />
+                   
                     <div class="col-md-12">
                       <label for="inputName5" class="form-label">Class Name</label>
-                      <input type="text" class="form-control" id="inputName5" name="nama_kelas">
+                      <input type="text" class="form-control" id="inputName5" name="nama_kelas" value="<?= $val->nama_kelas; ?>">
                     </div>
                     <div class="col-md-6">
                       <label for="inputEmail5" class="form-label">Capasity Class</label>
-                      <input type="text" class="form-control" id="inputEmail5" name="daya_tampung">
+                      <input type="text" class="form-control" id="inputEmail5" name="daya_tampung" value="<?= $val->daya_tampung; ?>">
                     </div>
                    
                     

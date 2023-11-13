@@ -34,86 +34,32 @@
                         <th scope="col">No</th>
                         <th scope="col">Class Name</th>
                         <th scope="col">Capasity</th>
-                        <th scope="col">Password Enrol</th>
+                        
                         <th scope="col">Aksi</th>
                       </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                          <th scope="row">1</th>
-                          <td>Ibrahim</td>
-                          <td>@ibrahim.id</td>
-                          <td>1234</td>
-                          <td>
-                          <button
-                                type="button"
-                                class="btn btn-warning btn-icon-split"
-                                data-bs-toggle="modal"
-                                data-bs-target="#editClass"
-                            >
-                                <span class="text">Edit</span>
-                            </button>
-                            <a href="#">
-                            <button class="btn btn-danger btn-icon-split">
-                              <span class="icon text-white-50">
-                                <i class="fas fa-trash"></i>
-                              </span>
-                              <a class="text-white" href="<?php echo base_url('class'); ?>" onclick="return confirm('Yakin Data Akan Dihapus');">Delete</a>
-                            </button>     
-                          </a> 
-                        </th>
-                        <div
-                          class="modal fade"
-                          id="editClass"
-                          tabindex="-1"
-                          aria-labelledby="exampleModalLabel"
-                          aria-hidden="true" >
-                          <div class="modal-dialog">
-                              <div class="modal-content">
-                                  <div class="modal-header">
-                                  <h1 class="modal-title fs-5" id="exampleModalLabel">
-                                      Edit Class
-                                  </h1>
-                                  <button
-                                      type="button"
-                                      class="btn-close"
-                                      data-bs-dismiss="modal"
-                                      aria-label="Close"
-                                  ></button>
+                    <?php $i = 1; ?>
+                        <?php foreach ($class as $c) : ?>
+                            <tr>
+                                <th scope="row"><?= $i++; ?></th>
+                                <td><?= $c->nama_kelas; ?></td>
+                                <td><?= $c->daya_tampung; ?></td>
+                                
+                                <td > 
+                                  <div class="d-flex ">
+                                    <a href="<?= base_url('edit_class?id=' . $c->id) ?>" class="btn btn-success" style="width:100px;">Edit</a>
+                               
+                                <form method="post" action="/class/delete" >
+                                 
+                                      <?= csrf_field() ?>
+                                      <input type="hidden" name="class_id" value="<?= $c->id;?>"/>
+                                    <button type="submit" name="delete" class="btn btn-danger" style="width:100spx;">Delete</button>
+                                </form>
                                   </div>
-
-                                  <div class="modal-body">
-                                  <!-- Vertical Form -->
-                                    <form class="row g-3"
-                                          action="class"
-                                          method="POST"
-                                          enctype="multipart/form-data"
-                                    >
-                                      <div class="col-12">
-                                        <label for="inputNanme4" class="form-label">Class Name</label>
-                                        <input type="text" class="form-control" id="class_name">
-                                      </div>
-                                      <div class="col-12">
-                                        <label for="inputNanme4" class="form-label">Capasity Class</label>
-                                        <input type="text" class="form-control" id="capasity_class">
-                                      </div>
-                                      <div class="col-12">
-                                        <label for="inputNanme4" class="form-label">Password Enrol</label>
-                                        <input type="text" class="form-control" id="password">
-                                      </div>
-                                      <div class="col-12">
-                                        <label for="inputEmail4" class="form-label">Subjek</label>
-                                        <input type="email" class="form-control" id="subjek">
-                                      </div>
-                                      <br>
-                                      <div class="text-center">
-                                        <a type="submit" class="btn btn-primary" href="<?php echo base_url('class'); ?>">Submit</a>
-                                        <button type="reset" class="btn btn-secondary">Reset</button>
-                                      </div>
-                                    </form><!-- Vertical Form -->
-                                    </div>
-                              </div>
-                            </div>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
                     </tbody>
                   </table>
                 </div>
