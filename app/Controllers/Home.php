@@ -5,18 +5,17 @@ use App\Models\ClassModel;
 use Config\Auth;
 use App\Models\UserModel;
 use Myth\Auth\Models\GroupModel;
+use App\Models\InformationModel;
 
 class Home extends BaseController
 {
 
     protected $db, $builder; 
   
-
     public function __construct(){
        $this-> db      = \Config\Database::connect();
        $this-> builder = $this->db->table('users');
      
-
     }
 
     public function index(): string
@@ -74,8 +73,6 @@ class Home extends BaseController
 
         $data['class'] = $query->getResult()    ;
       
-
-        
         return view('class',$data);
     }
     public function delete_class($class_id=0)
@@ -147,7 +144,7 @@ class Home extends BaseController
     public function teacher(): string
 
     {
-           $this->builder->select('users.id as userid, username, email, name');
+        $this->builder->select('users.id as userid, username, email, name');
         $this->builder->join('auth_groups_users', 'auth_groups_users.user_id = users.id');
         $this->builder->join('auth_groups', 'auth_groups.id = auth_groups_users.group_id');
         $this->builder->where('auth_groups.name', 'teachers');
@@ -228,5 +225,9 @@ class Home extends BaseController
         return view('parents', $data);
     }
 
-    
+    public function profile(): string
+    {
+        return view('profile');
+    }
+
 }

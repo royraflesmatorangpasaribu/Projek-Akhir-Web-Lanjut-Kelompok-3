@@ -4,6 +4,7 @@ use CodeIgniter\Router\RouteCollection;
 use Myth\Auth\Config\Auth as AuthConfig;
 use App\controllers\User;
 use App\controllers\Admin;
+use App\controllers\InformationController;
 use Config\Auth; 
 
 
@@ -73,4 +74,11 @@ $routes->group('', ['namespace' => 'App\Controllers'], static function ($routes)
     $routes->get('/edit_class', 'Home::edit_class');
     $routes->post('/edit_class', 'Home::edit_class');
     $routes->post('/class/delete', 'Home::delete_class');
-});
+    $routes->get('/profile', 'Home::profile');
+
+    $routes->get('/information', [InformationController::class, 'information']);
+    $routes->post('information/store', [InformationController::class, 'store']);
+    $routes->put('information/(:any)', [InformationController::class,'update/$1']);
+    $routes->delete('/information/(:any)', [InformationController::class,'destroy/$1']);
+
+}); 
