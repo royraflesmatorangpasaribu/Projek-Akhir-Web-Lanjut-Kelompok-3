@@ -1,6 +1,5 @@
 <?= $this->extend('templates/index'); ?>
-<?= $this->section('content'); ?>
-
+<?= $this->section('page-content'); ?>
 
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top d-flex align-items-center">
@@ -29,7 +28,7 @@
         </li><!-- End Search Icon-->
 
         <li class="nav-item dropdown pe-3">
-          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="" data-bs-toggle="dropdown">
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
             <img src="assets/img/foto_def.png" alt="Profile" class="rounded-circle">
             <span class="">Super Admin</span>
           </a><!-- End Profile Iamge Icon -->
@@ -44,7 +43,7 @@
   <aside id="sidebar" class="sidebar">
     <ul class="sidebar-nav" id="sidebar-nav">
       <li class="nav-item">
-        <a class="nav-link " href="<?php echo base_url('admin'); ?>">
+        <a class="nav-link " href="<?php echo base_url('superadmin'); ?>">
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
@@ -75,7 +74,7 @@
       </li><!-- End Tables Nav -->
 
       <li class="nav-item">
-        <a class="nav-link " href="/class">
+        <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-card-list"></i><span>Class</span><i class=""></i>
         </a>
       </li><!-- End Charts Nav -->
@@ -111,58 +110,42 @@
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="#">Home</a></li>
-          <li class="breadcrumb-item active" href="<?php echo base_url('admin'); ?>">Dashboard</li>
+          <li class="breadcrumb-item active" href="<?php echo base_url('dashboard_super_admin'); ?>">Dashboard</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
-    <!-- <center>
+    <center>
     <img src="<?php echo base_url('assets/img/greet.png'); ?>" alt="" style="height: 450px; width: 850px;"><br><br>
-    </center> -->
+    </center>
     <section class="section dashboard">
       <div class="row">
 
         <!-- Left side columns -->
         <div class="col-lg-8">
           <div class="row">
-
-            <!-- Teacher Tabel -->
-            <div class="col-12">
-              <div class="card recent-sales overflow-auto">
-
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-8">
                 <div class="card-body">
-                  <h5 class="card-title">Students Table <span>| Today</span></h5>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                    <h4><?= $user->username; ?><h4>
+                  </li>
 
-                  <table class="table table-borderless datatable">
-                    <thead>
-                      <tr>
-                        <th scope="col">No</th>
-                        <th scope="col">Username</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Role</th>
-                         </tr>
-                    </thead>
-                    <tbody>
-                        <?php $i = 1; ?>
-                        <?php foreach ($users as $user) : ?>
-                            <tr>
-                                <th scope="row"><?= $i++; ?></th>
-                                <td><?= $user->username; ?></td>
-                                <td><?= $user->email; ?></td>
-                                <td><?= $user->name; ?></td>
-                               
-                              
-                            </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                  </table>
-                  
-                  <!-- <a type="button" class="btn btn-primary" href="<?php echo base_url('admin/create_data'); ?>">Add Data</a> -->
+                  <li class="list-group-item"><?= $user->email; ?></li>
+                  <li class="list-group-item">
+                    <span class="badge badge-<?= ($user->name == 'admin') ? 'success' : 'warning'; ?>"><?= $user->name; ?></span>
+                  </li>
+
+                  <li class="list-group-item">
+                    <small><a href="<?= base_url('admin') ?>">&laquo; back to user list</a></small>
+                  </li>
+
+                </ul>
                 </div>
-
               </div>
-            </div><!-- End Teacher Table -->
-
-
+            </div>
+          </div>
           </div>
         </div><!-- End Left side columns -->
 
@@ -213,6 +196,13 @@
 
   </main><!-- End #main -->
 
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; Copyright <strong><span>E-Learning</span></strong>. All Rights Reserved
+    </div>
+  </footer><!-- End Footer -->
+
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-  <?= $this->endSection('content'); ?> 
+  <?= $this->endSection('page-content'); ?> 

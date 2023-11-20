@@ -14,16 +14,16 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
-  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
-  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+  <link href="<?= base_url('assets/vendor/bootstrap/css/bootstrap.min.css') ?>" rel="stylesheet">
+  <link href="<?= base_url('assets/vendor/bootstrap-icons/bootstrap-icons.css') ?>" rel="stylesheet">
+  <link href="<?= base_url('assets/vendor/boxicons/css/boxicons.min.css') ?>" rel="stylesheet">
+  <link href="<?= base_url('assets/vendor/quill/quill.snow.css') ?>" rel="stylesheet">
+  <link href="<?= base_url('assets/vendor/quill/quill.bubble.css') ?>" rel="stylesheet">
+  <link href="<?= base_url('assets/vendor/remixicon/remixicon.css') ?>" rel="stylesheet">
+  <link href="<?= base_url('assets/vendor/simple-datatables/style.css') ?>" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="<?= base_url('assets/css/style.css') ?>"" rel="stylesheet">
 
 </head>
 
@@ -33,7 +33,7 @@
 
     <div class="d-flex align-items-center justify-content-between">
       <a href="#" class="logo d-flex align-items-center ">
-        <img src="assets/img/logo.png" alt="" style="border-color: black;">
+        <img src="<?= base_url('assets/img/logo.png') ?>" alt="" style="border-color: black;">
         <span class="d-none d-lg-block">E-Learning</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
@@ -56,7 +56,7 @@
 
         <li class="nav-item dropdown pe-3">
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="assets/img/foto_def.png" alt="Profile" class="rounded-circle">
+            <img src="<?= base_url('assets/img/foto_def.png') ?>" alt="Profile" class="rounded-circle">
             <span class="">Super Admin</span>
           </a><!-- End Profile Iamge Icon -->
         </li><!-- End Profile Nav -->
@@ -137,17 +137,17 @@
   </aside><!-- End Sidebar-->
     <?= $this->renderSection('content') ?>
     <!-- Vendor JS Files -->
-  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/chart.js/chart.umd.js"></script>
-  <script src="assets/vendor/echarts/echarts.min.js"></script>
-  <script src="assets/vendor/quill/quill.min.js"></script>
-  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
-  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="<?= base_url('assets/vendor/apexcharts/apexcharts.min.js')?>"></script>
+  <script src="<?= base_url('assets/vendor/bootstrap/js/bootstrap.bundle.min.js')?>"></script>
+  <script src="<?= base_url('assets/vendor/chart.js/chart.umd.js')?>"></script>
+  <script src="<?= base_url('assets/vendor/echarts/echarts.min.js')?>"></script>
+  <script src="<?= base_url('assets/vendor/quill/quill.min.js')?>"></script>
+  <script src="<?= base_url('assets/vendor/simple-datatables/simple-datatables.js')?>"></script>
+  <script src="<?= base_url('assets/vendor/tinymce/tinymce.min.js')?>"></script>
+  <script src="<?= base_url('assets/vendor/php-email-form/validate.js')?>"></script>
 
   <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="<?= base_url('assets/js/main.js')?>"></script>
 
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
