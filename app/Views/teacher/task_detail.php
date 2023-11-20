@@ -42,6 +42,7 @@
                                 
                                 <form action="<?= base_url('/nilai/' . $ts->id ) ?>" method="POST">
                                     <input type="hidden" name="_method" value="DELETE">
+                                    <input type="hidden" name="taskid" value="<?= $taskid ?>">
                                     <?= csrf_field() ?>
                                     <button class="btn btn-outline-danger"><i class="bi bi-trash3"></i></button>
                                 </form>

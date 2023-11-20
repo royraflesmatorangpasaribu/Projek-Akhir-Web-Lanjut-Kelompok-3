@@ -55,4 +55,13 @@ class TaskController extends BaseController
         return redirect()->to(base_url('/task'));
     }
 
+    public function destroy($id){
+        $result = $this->taskModel->deleteTask($id);
+        if (!$result){
+            return redirect()->back()->with('error', 'Gagal menghapus data');
+        }
+        return redirect()->to(base_url('/task'))
+            ->with('success', 'Berhasil menghapus data');
+    }
+
 }
