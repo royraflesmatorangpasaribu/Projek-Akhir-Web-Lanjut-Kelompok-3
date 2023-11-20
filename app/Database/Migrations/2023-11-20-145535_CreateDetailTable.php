@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class CreateTaskDetailTable extends Migration
+class CreateDetailTable extends Migration
 {
     public function up()
     {
@@ -41,6 +41,7 @@ class CreateTaskDetailTable extends Migration
             'nilai'   => [
                 'type'              => 'INT',
                 'constraint'        => 11,
+                'null'               => true,
             ],
 
             'created_at' => [

@@ -53,5 +53,9 @@ class TaskModel extends Model
     public function updateTask($data, $id){
         return $this->update($id, $data);
     }
+
+    public function deleteTask($id){
+        return $this->delete($id);
+    }
     
 }

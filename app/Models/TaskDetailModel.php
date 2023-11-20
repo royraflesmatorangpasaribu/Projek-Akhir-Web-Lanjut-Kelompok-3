@@ -50,5 +50,8 @@ class TaskDetailModel extends Model
         return $this->update($id, $data);
     }
 
+    public function deleteTask($id){
+        return $this->delete($id);
+    }
     
 }
