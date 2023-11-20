@@ -4,15 +4,15 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class ClassModel extends Model
+class TaskDetailModel extends Model
 {
-    protected $table            = 'kelas';
+    protected $table            = 'detail_task';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['name_class'];
+    protected $allowedFields    = ['id_kelas', 'id_task','nama_siswa', 'file', 'nilai', 'created_at','updated_at'];
 
     // Dates
     protected $useTimestamps = true;
@@ -38,7 +38,17 @@ class ClassModel extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
-    public function getClass(){
+    public function getTask($id = null){
+        if($id != null){
+            return $this->select('detail_task.*')
+                ->find($id);
+        }
         return $this->findAll();
     }
+
+    public function updateNilai($data, $id){
+        return $this->update($id, $data);
+    }
+
+    
 }
