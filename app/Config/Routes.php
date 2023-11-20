@@ -82,3 +82,7 @@ $routes->group('', ['namespace' => 'App\Controllers'], static function ($routes)
     $routes->delete('/information/(:any)', [InformationController::class,'destroy/$1']);
 
 }); 
+
+$routes->get('/dashboard_teacher', 'Home::dashboard_teacher');
+$routes->get('/management_courses', 'Home::management_courses');
+$routes->get('/detail_courses', 'Home::detail_courses');

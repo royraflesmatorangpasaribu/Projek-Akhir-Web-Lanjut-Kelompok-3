@@ -230,4 +230,19 @@ class Home extends BaseController
         return view('profile');
     }
 
+    public function dashboard_teacher(): string
+    {
+        return view('dashboard_teacher');
+    }
+
+    public function management_courses(): string
+    {
+        return view('management_courses');
+    }
+
+    public function detail_courses(): string
+    {
+        return view('detail_courses');
+    }
+
 }
