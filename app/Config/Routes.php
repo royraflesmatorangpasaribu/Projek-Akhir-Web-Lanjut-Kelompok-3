@@ -95,4 +95,6 @@ $routes->group('', ['namespace' => 'App\Controllers'], static function ($routes)
     $routes->get('/task/detail/(:any)', [TaskDetailController::class, 'index']);
     $routes->delete('/nilai/(:any)', [TaskDetailController::class,'destroy/$1']);
 
+    $routes->get('/parents_dashboard', 'Home::dashboard_parents');
+
 }); 
