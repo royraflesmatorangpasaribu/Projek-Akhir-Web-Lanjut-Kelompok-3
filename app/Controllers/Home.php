@@ -235,4 +235,9 @@ class Home extends BaseController
         return view('teacher/dashboard_teacher');
     }
 
+    public function dashboard_parents(): string
+    {
+        return view('parents_dashboard');
+    }
+
 }
