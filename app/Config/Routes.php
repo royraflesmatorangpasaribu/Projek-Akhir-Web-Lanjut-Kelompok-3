@@ -2,9 +2,11 @@
 
 use CodeIgniter\Router\RouteCollection;
 use Myth\Auth\Config\Auth as AuthConfig;
-use App\controllers\User;
+use App\controllers\UserController;
 use App\controllers\Admin;
 use App\controllers\InformationController;
+use App\Controllers\TaskController;
+use App\Controllers\TaskDetailController;
 use Config\Auth; 
 
 
@@ -18,7 +20,7 @@ $routes->get('/redirect', 'Admin::redirect');
 
 // $routes->get('/user/create', [User::class, 'create']);
 $routes->post('/admin/store', [Admin::class, 'store']);
-$routes->get('/user', [User::class, 'index']);
+$routes->get('/user', [UserController::class, 'index']);
 $routes->get('/admin/create_data', [Admin::class, 'create']);
 $routes->post('/updateUser', 'admin::updateUser');
 
@@ -80,5 +82,17 @@ $routes->group('', ['namespace' => 'App\Controllers'], static function ($routes)
     $routes->post('information/store', [InformationController::class, 'store']);
     $routes->put('information/(:any)', [InformationController::class,'update/$1']);
     $routes->delete('/information/(:any)', [InformationController::class,'destroy/$1']);
+
+    $routes->get('/dashboard_teacher', 'Home::dashboard_teacher');
+    $routes->get('/task', [TaskController::class, 'task']);
+    $routes->post('task/store', [TaskController::class, 'store']);
+    $routes->put('task/(:any)', [TaskController::class,'update']);
+    $routes->delete('/task/(:any)', [TaskController::class,'destroy/$1']);
+    
+    
+    $routes->get('/user/(:any)/edit', [TaskDetailController::class, 'edit']);
+    $routes->put('/nilai/(:any)', [TaskDetailController::class,'update']);
+    $routes->get('/task/detail/(:any)', [TaskDetailController::class, 'index']);
+    $routes->delete('/nilai/(:any)', [TaskDetailController::class,'destroy/$1']);
 
 }); 
