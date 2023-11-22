@@ -10,6 +10,7 @@
           <div class="row">
           <form action="<?= base_url('/nilai/' . $nilai['id'] )?>" method="post">
              <input type="hidden" name="_method" value="PUT">
+              <input type="hidden" name="taskid" value="<?= $taskid ?>">
               <?= csrf_field() ?>
                <div class="mb-3">
                     <label for="nilai" class="col-form-label">Nilai</label>

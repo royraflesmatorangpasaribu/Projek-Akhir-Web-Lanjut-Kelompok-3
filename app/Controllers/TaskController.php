@@ -18,6 +18,8 @@ class TaskController extends BaseController
     }
     public function task()
     {
+        
+        if(session('taskid')!=null)return redirect()->to('/task/detail/'.session('taskid'));
         $data = [
             'task'     => $this->taskModel->getTask(),
             'class'     => $this->classModel->getClass()
