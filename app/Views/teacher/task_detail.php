@@ -38,7 +38,7 @@
                                     data-bs-target="#editTaskDetail<?= $ts->id ?>"
                                     ><i class="bi bi-pencil-square"></i>
                                 </button> -->
-                                <a href="<?= base_url('/user/'. $ts->id . '/edit') ?>" type="button" class="btn btn-info"><i class="bi bi-pencil-square"></i></a>
+                                <a href="<?= base_url('/user/'. $ts->id . '/edit?taskid='.$taskid) ?>" type="button" class="btn btn-info"><i class="bi bi-pencil-square"></i></a>
                                 
                                 <form action="<?= base_url('/nilai/' . $ts->id ) ?>" method="POST">
                                     <input type="hidden" name="_method" value="DELETE">
@@ -63,6 +63,7 @@
                                   <div class="modal-body">
                                     <form action="<?= base_url('/nilai/' . $ts->id )?>" method="post">
                                         <input type="hidden" name="_method" value="PUT">
+                                        <input type="hidden" name="taskid" value="<?= $taskid ?>">
                                         <?= csrf_field() ?>
                                         <div class="mb-3">
                                             <label for="nilai" class="col-form-label">Nilai</label>

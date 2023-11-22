@@ -91,7 +91,7 @@ $routes->group('', ['namespace' => 'App\Controllers'], static function ($routes)
     
     
     $routes->get('/user/(:any)/edit', [TaskDetailController::class, 'edit']);
-    $routes->put('nilai/(:any)', [TaskDetailController::class,'update']);
+    $routes->put('/nilai/(:any)', [TaskDetailController::class,'update']);
     $routes->get('/task/detail/(:any)', [TaskDetailController::class, 'index']);
     $routes->delete('/nilai/(:any)', [TaskDetailController::class,'destroy/$1']);
 

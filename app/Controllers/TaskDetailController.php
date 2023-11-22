@@ -23,9 +23,11 @@ class TaskDetailController extends BaseController
     }
 
     public function index($id)
-    {
-        $data['title']  = 'Task Detail';
+    {   
 
+        
+        $data['title']  = 'Task Detail';
+       
         $this->builder->select('detail_task.*');
         $this->builder->join('task', 'detail_task.id_task = task.id');
         $this->builder->where('detail_task.id_task', $id);
@@ -34,7 +36,8 @@ class TaskDetailController extends BaseController
         $data['task']  = $query->getResult();
 
         $data['taskid'] = $id; 
-
+        //dd(session('taskid'));
+       
         if(empty($data['task'])){
             return redirect()->to('/task');
         }
@@ -44,27 +47,31 @@ class TaskDetailController extends BaseController
     public function edit($id){
         
         $result = $this->taskdetailModel->getTask($id);
-
+        $taskid = $this->request->getVar('taskid');
+        
         $data = [
             'nilai' => $result,
+            'taskid' => $taskid,
         ];
-        return view('teacher/edit-detail-task', $data);
+        return view('teacher/edit-detail-task',$data);
     }
     
     public function update($id){
-        // $id = $this->request->getVar('id');
+        $taskid = $this->request->getVar('taskid');
+        //dd($taskid);
         $data = [
             'nilai'        => $this->request->getVar('nilai'),
         ];
 
         $result = $this->taskdetailModel->updateNilai($data, $id);
-
+        
         if(!$result){
             return redirect()->back()->withInput()
                 ->with('error', 'Gagal Menyimpan Data');
         }
 
-        return redirect()->to(base_url('/task/detail/' . $id));
+        return redirect()->to(base_url('/task'))->with('taskid',$taskid);
+        session()->set('taskid', $taskid);
     }
 
     public function destroy($id){
