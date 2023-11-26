@@ -240,4 +240,29 @@ class Home extends BaseController
         return view('parents_dashboard');
     }
 
+    public function dashboard_students()
+    {
+        return view('dashboard_students');
+    }
+
+    public function class_students()
+    {
+        return view('class_students');
+    }
+
+    public function information_students()
+    {
+        return view('information_students');
+    }
+
+    public function profile_students()
+    {
+        return view('profile_students');
+    }
+
+    public function detail_class()
+    {
+        return view('detail_class');
+    }
+
 }
