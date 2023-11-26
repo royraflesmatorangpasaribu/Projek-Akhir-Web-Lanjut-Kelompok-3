@@ -97,4 +97,11 @@ $routes->group('', ['namespace' => 'App\Controllers'], static function ($routes)
 
     $routes->get('/parents_dashboard', 'Home::dashboard_parents');
 
+    $routes->get('/dashboard_students', 'Home::dashboard_students');
+    $routes->get('/class_students', 'Home::class_students');
+    $routes->get('/information_students', 'Home::information_students');
+    $routes->get('/profile_students', 'Home::profile_students');
+    $routes->get('detail_class', 'Home::detail_class');
+
+
 }); 
