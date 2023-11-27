@@ -7,13 +7,14 @@ use App\controllers\Admin;
 use App\controllers\InformationController;
 use App\Controllers\TaskController;
 use App\Controllers\TaskDetailController;
+use App\Controllers\TaskStudents;
 use Config\Auth; 
 
 
 /**
  * @var RouteCollection $routes
  */
-$routes->get('/', 'Home::index');
+$routes->get('/', 'Home::dashboard_students');
 $routes->get('/redirect', 'Admin::redirect');
 // $routes->get('/admin', 'Admin::index');
 
@@ -97,11 +98,22 @@ $routes->group('', ['namespace' => 'App\Controllers'], static function ($routes)
 
     $routes->get('/parents_dashboard', 'Home::dashboard_parents');
 
-    $routes->get('/dashboard_students', 'Home::dashboard_students');
-    $routes->get('/class_students', 'Home::class_students');
-    $routes->get('/information_students', 'Home::information_students');
-    $routes->get('/profile_students', 'Home::profile_students');
+    $routes->get('/dashboard_students', 'Home::dashboard_students', ['filter' => 'role:students']);
+    $routes->get('/dashboard_students/index', 'Home::dashboard_students', ['filter' => 'role:students']);
+    $routes->get('/class_students', 'Home::class_students', ['filter' => 'role:students']);
+    $routes->get('/information_students', 'Home::information_students', ['filter' => 'role:students']);
+    $routes->get('/profile_students', 'Home::profile_students', ['filter' => 'role:students']);
     $routes->get('detail_class', 'Home::detail_class');
+
+
+    $routes->get('/task_students', 'TaskStudents::index', ['filter' => 'role:students']);
+    $routes->get('/task_students/index', 'TaskStudents::index', ['filter' => 'role:students']);
+    $routes->get('/upload', [TaskStudents::class, 'task'], ['filter' => 'role:students']);
+    $routes->post('/task/create', [TaskStudents::class, 'do_upload'], ['filter' => 'role:students']);
+    $routes->get('/task_students/detail/(:any)', [TaskStudents::class, 'detail'], ['filter' => 'role:students']);
+    // File: app/Config/Routes.php
+    $routes->get('view/(:segment)', 'TaskStudents::viewFile/$1', ['filter' => 'role:students']);
+
 
 
 }); 

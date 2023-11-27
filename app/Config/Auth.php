@@ -17,6 +17,14 @@ class Auth extends \Myth\Auth\Config\Auth
      */
     public $defaultUserGroup;
 
+    public $groups = [
+        'student'    => ['name' => 'Student'],
+        'parent'     => ['name' => 'Parent'],
+        'super_admin' => ['name' => 'Super Admin'],
+        'teacher'    => ['name' => 'Teacher'],
+    ];
+    
+
     /**
      * --------------------------------------------------------------------
      * Landing Route
