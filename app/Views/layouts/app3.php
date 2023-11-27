@@ -75,7 +75,7 @@
                 </a>
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="logout">
                     <i class="bi bi-box-arrow-in-right"></i>
                     <span>Logout</span>
