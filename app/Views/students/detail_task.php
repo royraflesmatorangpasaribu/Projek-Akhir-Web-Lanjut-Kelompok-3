@@ -22,6 +22,7 @@
                         <th scope="col">Nama Siswa</th>
                         <th scope="col">File</th>
                         <th scope="col">Nilai</th>
+                        <th scope="col">Aksi</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -34,7 +35,6 @@
                                 <td><?= $ts->nama_siswa ?></td>
                                 <td><?= $ts->file ?></td>
                                 <td><?= $ts->nilai ?></td>
-                                <td>Aksi</td>
                                 <td>
                                 <a href="<?= base_url('view/' . $ts->file ) ?>" target="_blank" class="btn btn-primary">Lihat File</a>
 
