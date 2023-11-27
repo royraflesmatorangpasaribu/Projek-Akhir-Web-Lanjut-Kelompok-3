@@ -89,7 +89,7 @@
         <div class="small-box" style="background-color: #65AEDD; color: #fff;">
             <h2>child data</h2>
             <p>information about your child.</p>
-            <a href="#" class="btn">view</a>
+            <a href="<?= base_url("parents/students")?>" class="btn">view</a>
         </div>
         <div class="small-box" style="background-color: #52BE80; color: #fff;">
             <h2>announcement</h2>

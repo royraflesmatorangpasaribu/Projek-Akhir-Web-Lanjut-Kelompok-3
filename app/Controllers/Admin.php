@@ -93,13 +93,22 @@ class Admin extends BaseController
         return view('admin/edit',$data);
     }
 
-    public function redirect(){
-        if(in_groups("user")){
-            return redirect()->to("/user");
-        }else{
-            return redirect()->to("/admin");
-        }  
+    public function redirect()
+{
+    if (in_groups('student')) {
+        return redirect()->to('/student');
+    } elseif (in_groups('parent')) {
+        return redirect()->to('/parent');
+    } elseif (in_groups('super_admin')) {
+        return redirect()->to('/admin');
+    } elseif (in_groups('teacher')) {
+        return redirect()->to('/teacher');
+    } else {
+        // Handle case where user doesn't belong to any known group
+        return redirect()->to('/');
     }
+}
+
 
     public function destroy($id)
     {
