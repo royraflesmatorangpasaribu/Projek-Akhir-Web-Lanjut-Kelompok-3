@@ -140,7 +140,7 @@
 
                         <div class="me-3">
                             <i class="bi bi-person-fill"></i>
-                            <a href="<?php echo base_url('profile_students')?>"><span class="text-gray-600 medium">David Putra</span></a>
+                            <a href="<?php echo base_url('profile_students')?>"><span class="text-gray-600 medium"><?= user()->username; ?></span></a>
                         </div>
 
                     </ul>

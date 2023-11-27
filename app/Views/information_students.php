@@ -22,42 +22,34 @@
                     </div>
                     <div class="card-body">
                         <div class="row">
+
+                        <?php
+                        foreach ($information as $info){
+                        ?>
                             <div class="col-lg-4">
                                 <div class="card">
-                                    <div class="card-header d-flex justify-content-between">
-                                        2023-11-24
+                                    <div class="card-header d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <?= $info['date'] ?>
+                                    </div>
+                                    <div class="d-flex justify-content-center align-items-center">
+    
+                                        
+                                            <?= csrf_field() ?>
+                                            
+                                        </form>
+                                    </div>    
                                     </div>
                                     <div class="card-body">
-                                        <h5 class="card-title">Assignment</h5>
-                                        Hello everyone! This week's assignment has been uploaded to the platform. 
-                                        Please check the details in the Assignment section and complete it before the specified deadline.
+                                        <h5 class="card-title"><?= $info['title'] ?></h5>
+                                        <?= $info['text'] ?>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4">
-                                <div class="card">
-                                    <div class="card-header d-flex justify-content-between">
-                                        2023-11-12
-                                    </div>
-                                    <div class="card-body">
-                                        <h5 class="card-title">Assignment</h5>
-                                        Hello everyone! This week's assignment has been uploaded to the platform. 
-                                        Please check the details in the Assignment section and complete it before the specified deadline.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="card">
-                                    <div class="card-header d-flex justify-content-between">
-                                        2023-11-02
-                                    </div>
-                                    <div class="card-body">
-                                        <h5 class="card-title">Assignment</h5>
-                                        Hello everyone! This week's assignment has been uploaded to the platform. 
-                                        Please check the details in the Assignment section and complete it before the specified deadline.
-                                    </div>
-                                </div>
-                            </div>                            
+                        
+                            <?php
+                                }
+                            ?>
                         </div>
 
                     </div>
@@ -67,4 +59,4 @@
     </div>
 </div>
 
-<?= $this->endSection() ?>
+<?=$this->endSection()?>

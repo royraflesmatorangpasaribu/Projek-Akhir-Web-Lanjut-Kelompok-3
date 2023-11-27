@@ -5,7 +5,7 @@ namespace App\Models;
 use CodeIgniter\Model;
 use Faker\Generator;
 use Myth\Auth\Authorization\GroupModel;
-use Myth\Auth\Entities\User;
+// use Myth\Auth\Entities\User;
 
 /**
  * @method User|null first()
@@ -58,23 +58,55 @@ class UserModel extends Model
     }
 
 
-    protected $table          = 'users';
-    protected $primaryKey     = 'id';
-    protected $returnType     = 'App\Entities\User';
-    protected $useSoftDeletes = false;
-    protected $allowedFields  = [
-        'email', 'username', 'password_hash', 'reset_hash', 'reset_at', 'reset_expires', 'activate_hash',
-        'status', 'status_message', 'active', 'force_pass_reset', 'permissions', 'deleted_at',
-    ];
-    protected $useTimestamps   = true;
-    protected $validationRules = [
-        'email'         => 'required|valid_email|is_unique[users.email,id,{id}]',
-        'username'      => 'required|alpha_numeric_punct|min_length[3]|max_length[30]|is_unique[users.username,id,{id}]',
-        'password_hash' => 'required',
-    ];
-    protected $validationMessages = [];
-    protected $skipValidation     = false;
-    protected $afterInsert        = ['addToGroup'];
+    // protected $table          = 'users';
+    // protected $primaryKey     = 'id';
+    // protected $returnType     = 'array';
+    // protected $useSoftDeletes = false;
+    // protected $allowedFields  = [
+    //     'email', 'username', 'password_hash', 'reset_hash', 'reset_at', 'reset_expires', 'activate_hash',
+    //     'status', 'status_message', 'active', 'force_pass_reset', 'permissions', 'deleted_at',
+    // ];
+    // protected $useTimestamps   = true;
+    // protected $validationRules = [
+    //     'email'         => 'required|valid_email|is_unique[users.email,id,{id}]',
+    //     'username'      => 'required|alpha_numeric_punct|min_length[3]|max_length[30]|is_unique[users.username,id,{id}]',
+    //     'password_hash' => 'required',
+    // ];
+    // protected $validationMessages = [];
+    // protected $skipValidation     = false;
+    // protected $afterInsert        = ['addToGroup'];
+
+    protected $table            = 'users';
+    protected $primaryKey       = 'id';
+    protected $useAutoIncrement = true;
+    protected $returnType       = 'array';
+    protected $useSoftDeletes   = false;
+    protected $protectFields    = true;
+    protected $allowedFields    = ['id', 'email', 'username', 'password_hash', 'active'];
+
+    // Dates
+    protected $useTimestamps = true;
+    protected $dateFormat    = 'datetime';
+    protected $createdField  = 'created_at';
+    protected $updatedField  = 'updated_at';
+    protected $deletedField  = 'deleted_at';
+
+    // Validation
+    protected $validationRules      = [];
+    protected $validationMessages   = [];
+    protected $skipValidation       = false;
+    protected $cleanValidationRules = true;
+
+    // Callbacks
+    protected $allowCallbacks = true;
+    protected $beforeInsert   = [];
+    protected $afterInsert    = [];
+    protected $beforeUpdate   = [];
+    protected $afterUpdate    = [];
+    protected $beforeFind     = [];
+    protected $afterFind      = [];
+    protected $beforeDelete   = [];
+    protected $afterDelete    = [];
 
     /**
      * The id of a group to assign.
@@ -172,6 +204,18 @@ class UserModel extends Model
 
     public function deleteUser($id){
         return $this->delete($id);
+    }
+
+
+    public function getStudents($id = null){
+        if($id != null){
+            return $this->find($id);
+        }
+        return $this->findAll();
+    }
+
+    public function updateStudents($id, $data){
+        return $this->update($id, $data);
     }
 
     

@@ -5,6 +5,7 @@ use Myth\Auth\Config\Auth as AuthConfig;
 use App\controllers\UserController;
 use App\controllers\Admin;
 use App\controllers\InformationController;
+use App\Controllers\StudentController;
 use App\Controllers\TaskController;
 use App\Controllers\TaskDetailController;
 use Config\Auth; 
@@ -67,6 +68,7 @@ $routes->group('', ['namespace' => 'App\Controllers'], static function ($routes)
     $routes->post('/user/store', [User::class, 'store']);
     $routes->get('/user', [User::class, 'index']);
 
+
     $routes->get('/parents', 'Home::parents');
     $routes->get('/students', 'Home::students');
     $routes->get('/teacher', 'Home::teacher');
@@ -99,9 +101,18 @@ $routes->group('', ['namespace' => 'App\Controllers'], static function ($routes)
 
     $routes->get('/dashboard_students', 'Home::dashboard_students');
     $routes->get('/class_students', 'Home::class_students');
-    $routes->get('/information_students', 'Home::information_students');
+    // $routes->get('/information_students', 'Home::information_students');
     $routes->get('/profile_students', 'Home::profile_students');
+    // $routes->get('/profile_students_edit', 'Home::profile_students_edit');
     $routes->get('detail_class', 'Home::detail_class');
+    $routes->get('/students/(:any)/edit', [UserController::class, 'edit']);
+    $routes->get('/information_students', 'StudentController::information');
+    $routes->put('profile_students/(:any)/update', 'StudentController::update/$1');
+    $routes->get('profile_students/(:any)/edit', 'StudentController::edit/$1');
+    // $routes->post('profile_students/(:any)/edit', 'StudentController::update/$1');
+
+
+    $routes->get('/edit_students', 'StudentController::coba');
 
 
 }); 
