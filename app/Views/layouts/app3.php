@@ -53,9 +53,9 @@
 
             <!-- Nav Item - Class -->
             <li class="nav-item active">
-                <a class="nav-link" href="<?php echo base_url('class_students')?>">
+                <a class="nav-link" href="<?php echo base_url('task_students')?>">
                     <i class="bi bi-card-list"></i>
-                    <span>Class</span>
+                    <span>Task</span>
                 </a>
             </li>
 
@@ -72,6 +72,13 @@
                 <a class="nav-link" href="<?php echo base_url('profile_students')?>">
                     <i class="bi bi-person"></i>
                     <span>Profile</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="logout">
+                    <i class="bi bi-box-arrow-in-right"></i>
+                    <span>Logout</span>
                 </a>
             </li>
             

@@ -37,7 +37,12 @@ class TaskDetailModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+    
 
+    public function saveTask($data){
+        $this->insert($data);
+    }
+    
     public function getTask($id = null){
         if($id != null){
             return $this->select('detail_task.*')
@@ -53,5 +58,6 @@ class TaskDetailModel extends Model
     public function deleteTask($id){
         return $this->delete($id);
     }
+    
     
 }
