@@ -129,5 +129,7 @@ $routes->group('', ['namespace' => 'App\Controllers'], static function ($routes)
     // File: app/Config/Routes.php
     $routes->get('view/(:segment)', 'TaskStudents::viewFile/$1', ['filter' => 'role:students']);
 
-
+    $routes->get('/parents_dashboard', 'Home::dashboard_parents');
+    $routes->get('/parents/students', 'Home::lstud');
+    $routes->get('/parents/students/detail/(:any)', 'Home::detail_stud/$1');
 }); 

@@ -270,4 +270,29 @@ class Home extends BaseController
         return view('profile_students_edit');
     }
 
+    public function lstud()
+    {
+        
+            $this->builder->select('users.id as userid, username, email, name');
+            $this->builder->join('auth_groups_users', 'auth_groups_users.user_id = users.id');
+            $this->builder->join('auth_groups', 'auth_groups.id = auth_groups_users.group_id');
+            $this->builder->where('auth_groups.name', 'students');
+    
+            
+            $query = $this->builder->get();
+    
+            $data['users']  = $query->getResult();
+           //dd($data);
+            return view('list_students', $data);
+    }
+    public function detail_stud($id){
+        $this->builder->select('users.id as userid, username, email');
+        $this->builder->where('users.id', $id); // Corrected to 'users.id'
+        $query = $this->builder->get();
+        $data['user'] = $query->getResult();
+        //dd($data['user']);
+        return view('parentstuddetail', $data);
+    }
+    
+
 }

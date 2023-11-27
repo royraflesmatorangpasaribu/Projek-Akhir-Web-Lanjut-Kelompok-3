@@ -7,6 +7,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -69,10 +71,12 @@
     </style>
 </head>
 <body>
-    <header id="header" class="header container-fluid fixed-top d-flex align-items-center">
+    <div class="container">
+        <div class="row">
+    <header id="header" class="header container-fluid fixed-top d-flex align-items-center mb-5">
         <ul class="nav nav-tabs">
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="<?php echo base_url('dashboard_parents'); ?>">Dashboard</a>
+                <a class="nav-link active" aria-current="page" href="<?php echo base_url('parents_dashboard'); ?>">Dashboard</a>
             </li>
             <!-- <li class="nav-item">
                 <a class="nav-link" href="<?php echo base_url('students'); ?>" >Students</a>
@@ -82,23 +86,75 @@
             </li>
         </ul>
     </header>
-    <div class="container position-relative"><br><br><br><br><br>
-    <div id="dashboard-container">
-    <div id="content">
-        <h1>welcome parents !</h1>
-        <div class="small-box" style="background-color: #65AEDD; color: #fff;">
-            <h2>child data</h2>
-            <p>information about your child.</p>
-            <a href="<?= base_url("parents/students")?>" class="btn">view</a>
-        </div>
-        <div class="small-box" style="background-color: #52BE80; color: #fff;">
-            <h2>announcement</h2>
-            <p>important announcement from school.</p>
-            <a href="#" class="btn">read the school announcement</a>
-        </div>
-    </div>
-</div>
 
+<main id="main" class="main mt-5">
+    <!-- <center>
+    <img src="<?php echo base_url('assets/img/greet.png'); ?>" alt="" style="height: 450px; width: 850px;"><br><br>
+    </center> -->
+    <section class="section dashboard">
+      <div class="row">
+
+        <!-- Left side columns -->
+        <div class="col-lg-12">
+          <div class="row">
+
+            <!-- Teacher Tabel -->
+            <div class="col-12">
+              <div class="card recent-sales overflow-auto">
+
+                <div class="card-body">
+                  <h5 class="card-title">Students Table <span>| Today</span></h5>
+                  <div class="col-3">
+                 
+</div>
+                  <table class="table table-borderless datatable">
+                    <thead>
+                      <tr>
+                       
+                        <th scope="col">Username</th>
+                        <th scope="col">Email</th>
+                       
+                         </tr>
+                    </thead>
+                    <tbody>
+                        
+                            <tr>
+                             
+                                <td><?= $user[0]->username; ?></td>
+                                <td><?= $user[0]->email; ?></td>
+                                
+                               
+                              
+                            </tr>
+                      
+                    </tbody>
+                  </table>
+                  
+                
+                </div>
+
+              </div>
+            </div><!-- End Teacher Table -->
+
+
+          </div>
+        </div><!-- End Left side columns -->
+
+        <!-- Right side columns -->
+        <div class="col-lg-4">
+
+          
+         
+        </div><!-- End Right side columns -->
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  </div>
+              
+  </div>
     </div>
 </body>
 </html>
