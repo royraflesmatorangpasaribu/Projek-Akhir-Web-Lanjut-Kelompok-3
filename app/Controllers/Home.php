@@ -18,10 +18,10 @@ class Home extends BaseController
      
     }
 
-    // public function index(): string
-    // {
-    //     return view('welcome_message');
-    // }
+    public function index(): string
+    {
+        return view('welcome_message');
+    }
 
     public function dashboard_super_admin(): string
     {
@@ -265,12 +265,9 @@ class Home extends BaseController
         return view('detail_class');
     }
 
-    public function redirect(){
-        if(in_groups("user")){
-            return redirect()->to("/student");
-        }else{
-            return redirect()->to("/admin");
-        }  
+    public function profile_students_edit()
+    {
+        return view('profile_students_edit');
     }
 
 }
