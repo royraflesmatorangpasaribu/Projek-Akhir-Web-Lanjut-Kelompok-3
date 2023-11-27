@@ -265,4 +265,9 @@ class Home extends BaseController
         return view('detail_class');
     }
 
+    public function profile_students_edit()
+    {
+        return view('profile_students_edit');
+    }
+
 }
