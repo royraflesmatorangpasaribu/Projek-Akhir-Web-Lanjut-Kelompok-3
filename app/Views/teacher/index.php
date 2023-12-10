@@ -2,9 +2,9 @@
 
 <?= $this->section('content') ?>
 
-  <main id="main" class="main">
-    <section id="hero" class="d-flex justify-content-center align-items-center">
-    <div class="container position-relative" data-aos="zoom-in" data-aos-delay="100">
+<main id="main">
+<section id="popular-courses" class="courses">
+    <div class="container">
       <h1>Task</h1>
         <div class="row">
             <div class="col-lg-12">
@@ -23,7 +23,7 @@
 
                         <div class="row">
                             <?php
-                                foreach ($task as $ts){
+                                foreach ($name as $ts){
                             ?>
                             <div class="col-lg-4">
                                 <div class="card">
@@ -47,7 +47,7 @@
                                     </div>    
                                     </div>
                                     <div class="card-body">
-                                        <h5 class="card-title"><?= $ts['id_kelas'] ?></h5>
+                                        <h5 class="card-title"><?= $ts['nama_kelas'] ?></h5>
                                         <?= $ts['keterangan'] ?>
                                     </div>
                                     <a href="<?= base_url('task/detail/' . $ts['id']) ?>" type="button" class="btn btn-primary"><i class="bi bi-ticket-detailed-fill"></i></a>

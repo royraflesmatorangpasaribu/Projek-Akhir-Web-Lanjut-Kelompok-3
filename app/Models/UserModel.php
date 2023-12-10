@@ -218,5 +218,17 @@ class UserModel extends Model
         return $this->update($id, $data);
     }
 
+    public function getT($id = null){
+        if($id != null){
+            return $this->find($id);
+        }
+        return $this->findAll();
+    }
+
+    public function updateTeacher($id, $data){
+        return $this->update($id, $data);
+    }
+    
+
     
 }

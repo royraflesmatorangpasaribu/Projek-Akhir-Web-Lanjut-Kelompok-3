@@ -22,11 +22,13 @@ $routes->get('/redirect', 'Admin::redirect');
 
 // $routes->get('/user/create', [User::class, 'create']);
 $routes->post('/admin/store', [Admin::class, 'store']);
-$routes->get('/user', [UserController::class, 'index']);
-$routes->get('/admin/create_data', [Admin::class, 'create']);
-$routes->post('/updateUser', 'admin::updateUser');
+$routes->get('/user', [UserController::class, 'index'], ['filter' => 'role:teachers']);
+$routes->put('profile_teacher/(:any)/update', 'UserController::update/$1', ['filter' => 'role:teachers']);
+$routes->get('profile_edit/(:any)/edit', 'UserController::edit/$1', ['filter' => 'role:teachers']);
+$routes->get('/admin/create_data', [Admin::class, 'create'], ['filter' => 'role:super_admin']);
+$routes->post('/updateUser', 'admin::updateUser', ['filter' => 'role:super_admin']);
 
-$routes->get('/admin/edit', [Admin::class, 'edit']);
+$routes->get('/admin/edit', [Admin::class, 'edit'], ['filter' => 'role:super_admin']);
 // $routes->delete('/user/delete/(:any)', [Admin::class, 'destroy'], ['filter' => 'role:super_admin']);
 // $routes->delete('/admin/(:any)', [Admin::class, 'destroy']);
 // $routes->get('/admin/detail/(:num)', 'Admin::detail');
@@ -70,66 +72,59 @@ $routes->group('', ['namespace' => 'App\Controllers'], static function ($routes)
     $routes->get('/user', [User::class, 'index']);
 
 
-    $routes->get('/parents', 'Home::parents');
-    $routes->get('/students', 'Home::students');
-    $routes->get('/teacher', 'Home::teacher');
-    $routes->get('/class', 'Home::class');
-    $routes->get('/create_class', 'Home::create_class');
-    $routes->post('/create_class', 'Home::create_class');
-    $routes->get('/edit_class', 'Home::edit_class');
-    $routes->post('/edit_class', 'Home::edit_class');
-    $routes->post('/class/delete', 'Home::delete_class');
-    $routes->get('/profile', 'Home::profile');
+    $routes->get('/parents', 'Home::parents', ['filter' => 'role:super_admin']);
+    $routes->get('/students', 'Home::students', ['filter' => 'role:super_admin']);
+    $routes->get('/teacher', 'Home::teacher', ['filter' => 'role:super_admin']);
+    $routes->get('/class', 'Home::class', ['filter' => 'role:super_admin']);
+    $routes->get('/create_class', 'Home::create_class', ['filter' => 'role:super_admin']);
+    $routes->post('/create_class', 'Home::create_class', ['filter' => 'role:super_admin']);
+    $routes->get('/edit_class', 'Home::edit_class', ['filter' => 'role:super_admin']);
+    $routes->post('/edit_class', 'Home::edit_class', ['filter' => 'role:super_admin']);
+    $routes->post('/class/delete', 'Home::delete_class', ['filter' => 'role:super_admin']);
+    $routes->get('/profile_admin', 'InformationController::profile', ['filter' => 'role:super_admin']);
+    $routes->put('profile_admin/(:any)/update', 'InformationController::updatepr/$1', ['filter' => 'role:super_admin']);
+    $routes->get('profile_admin/(:any)/edit', 'InformationController::edit/$1', ['filter' => 'role:super_admin']);
 
-    $routes->get('/information', [InformationController::class, 'information']);
-    $routes->post('information/store', [InformationController::class, 'store']);
-    $routes->put('information/(:any)', [InformationController::class,'update/$1']);
-    $routes->delete('/information/(:any)', [InformationController::class,'destroy/$1']);
 
-    $routes->get('/dashboard_teacher', 'Home::dashboard_teacher');
-    $routes->get('/task', [TaskController::class, 'task']);
-    $routes->post('task/store', [TaskController::class, 'store']);
-    $routes->put('task/(:any)', [TaskController::class,'update']);
-    $routes->delete('/task/(:any)', [TaskController::class,'destroy/$1']);
+    $routes->get('/information', [InformationController::class, 'information'], ['filter' => 'role:super_admin']);
+    $routes->post('information/store', [InformationController::class, 'store'], ['filter' => 'role:super_admin']);
+    $routes->put('information/(:any)', [InformationController::class,'update/$1'], ['filter' => 'role:super_admin']);
+    $routes->delete('/information/(:any)', [InformationController::class,'destroy/$1'], ['filter' => 'role:super_admin']);
+
+    $routes->get('/dashboard_teacher', 'Home::dashboard_teacher', ['filter' => 'role:teachers']);
+    $routes->get('/task', [TaskController::class, 'task'], ['filter' => 'role:teachers']);
+    $routes->post('task/store', [TaskController::class, 'store'], ['filter' => 'role:teachers']);
+    $routes->put('task/(:any)', [TaskController::class,'update'], ['filter' => 'role:teachers']);
+    $routes->delete('/task/(:any)', [TaskController::class,'destroy/$1'], ['filter' => 'role:teachers']);
     
     
-    $routes->get('/user/(:any)/edit', [TaskDetailController::class, 'edit']);
-    $routes->put('/nilai/(:any)', [TaskDetailController::class,'update']);
-    $routes->get('/task/detail/(:any)', [TaskDetailController::class, 'index']);
-    $routes->delete('/nilai/(:any)', [TaskDetailController::class,'destroy/$1']);
+    $routes->get('/user/(:any)/edit', [TaskDetailController::class, 'edit'], ['filter' => 'role:teachers']);
+    $routes->put('/nilai/(:any)', [TaskDetailController::class,'update'], ['filter' => 'role:teachers']);
+    $routes->get('/task/detail/(:any)', [TaskDetailController::class, 'index'], ['filter' => 'role:teachers']);
+    $routes->delete('/nilai/(:any)', [TaskDetailController::class,'destroy/$1'], ['filter' => 'role:teachers']);
 
-    $routes->get('/parents_dashboard', 'Home::dashboard_parents');
+    $routes->get('/parents_dashboard', 'Home::dashboard_parents', ['filter' => 'role:parents']);
 
-    // $routes->get('/dashboard_students', 'Home::dashboard_students');
-    // $routes->get('/class_students', 'Home::class_students');
-    // $routes->get('/information_students', 'Home::information_students');
-    // $routes->get('/profile_students', 'Home::profile_students');
-    // $routes->get('/profile_students_edit', 'Home::profile_students_edit');
-    // $routes->get('detail_class', 'Home::detail_class');
-    // $routes->get('/students/(:any)/edit', [UserController::class, 'edit']);
-    // $routes->get('/information_students', 'StudentController::information');
-    $routes->put('profile_students/(:any)/update', 'StudentController::update/$1');
-    $routes->get('profile_students/(:any)/edit', 'StudentController::edit/$1');
-    // $routes->post('profile_students/(:any)/edit', 'StudentController::update/$1');
-    // $routes->get('/edit_students', 'StudentController::coba');
+
+    $routes->put('profile_students/(:any)/update', 'StudentController::update/$1', ['filter' => 'role:students']);
+    $routes->get('profile_students/(:any)/edit', 'StudentController::edit/$1', ['filter' => 'role:students']);
+
 
     $routes->get('/dashboard_students', 'Home::dashboard_students', ['filter' => 'role:students']);
     $routes->get('/dashboard_students/index', 'Home::dashboard_students', ['filter' => 'role:students']);
     $routes->get('/class_students', 'Home::class_students', ['filter' => 'role:students']);
     $routes->get('/information_students', 'StudentController::information', ['filter' => 'role:students']);
     $routes->get('/profile_students', 'Home::profile_students', ['filter' => 'role:students']);
-    $routes->get('detail_class', 'Home::detail_class');
-
-
+    $routes->get('/view/(:any)', 'TaskStudents::view/$1');
     $routes->get('/task_students', 'TaskStudents::index', ['filter' => 'role:students']);
     $routes->get('/task_students/index', 'TaskStudents::index', ['filter' => 'role:students']);
     $routes->get('/upload', [TaskStudents::class, 'task'], ['filter' => 'role:students']);
     $routes->post('/task/create', [TaskStudents::class, 'do_upload'], ['filter' => 'role:students']);
     $routes->get('/task_students/detail/(:any)', [TaskStudents::class, 'detail'], ['filter' => 'role:students']);
     // File: app/Config/Routes.php
-    $routes->get('view/(:segment)', 'TaskStudents::viewFile/$1', ['filter' => 'role:students']);
+    // $routes->get('view/(:segment)', 'TaskStudents::viewFile/$1', ['filter' => 'role:students']);
 
-    $routes->get('/parents_dashboard', 'Home::dashboard_parents');
-    $routes->get('/parents/students', 'Home::lstud');
-    $routes->get('/parents/students/detail/(:any)', 'Home::detail_stud/$1');
-}); 
+    $routes->get('/parents_dashboard', 'Home::dashboard_parents', ['filter' => 'role:parents']);
+    $routes->get('/parents/students', 'Home::lstud', ['filter' => 'role:parents']);
+    $routes->get('/parents/students/detail/(:any)', 'Home::detail_stud/$1', ['filter' => 'role:parents']);
+});

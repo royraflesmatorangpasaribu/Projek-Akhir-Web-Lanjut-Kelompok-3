@@ -57,5 +57,13 @@ class TaskModel extends Model
     public function deleteTask($id){
         return $this->delete($id);
     }
+
+    public function getName()
+    {
+        return $this->db->table('task')
+            ->join('kelas', 'kelas.id = task.id_kelas')
+            ->get()
+            ->getResultArray();
+    }
     
 }

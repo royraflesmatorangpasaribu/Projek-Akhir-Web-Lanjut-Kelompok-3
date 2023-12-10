@@ -6,6 +6,7 @@ use Config\Auth;
 use App\Models\UserModel;
 use Myth\Auth\Models\GroupModel;
 use App\Models\InformationModel;
+use Myth\Auth\Password;
 
 class Home extends BaseController
 {
@@ -15,6 +16,7 @@ class Home extends BaseController
     public function __construct(){
        $this-> db      = \Config\Database::connect();
        $this-> builder = $this->db->table('users');
+       $this->userModel = new UserModel();
      
     }
 
@@ -223,11 +225,6 @@ class Home extends BaseController
         ];
 
         return view('parents', $data);
-    }
-
-    public function profile(): string
-    {
-        return view('profile');
     }
 
     public function dashboard_teacher()
