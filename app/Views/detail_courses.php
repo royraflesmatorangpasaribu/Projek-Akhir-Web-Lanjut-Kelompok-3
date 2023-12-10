@@ -40,6 +40,30 @@
                                     <td>A</td>
                                     <td><button class="btn btn-outline-danger"><i class="bi bi-trash3"></i></button></td>
                                 </tr>
+                                <tr>
+                                    <th scope="row"><?= $i++; ?></th>
+                                    <td>Maulana</td>
+                                    <td>A</td>
+                                    <td><button class="btn btn-outline-danger"><i class="bi bi-trash3"></i></button></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><?= $i++; ?></th>
+                                    <td>Bunga</td>
+                                    <td>A</td>
+                                    <td><button class="btn btn-outline-danger"><i class="bi bi-trash3"></i></button></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><?= $i++; ?></th>
+                                    <td>Maulana</td>
+                                    <td>A</td>
+                                    <td><button class="btn btn-outline-danger"><i class="bi bi-trash3"></i></button></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><?= $i++; ?></th>
+                                    <td>Bunga</td>
+                                    <td>A</td>
+                                    <td><button class="btn btn-outline-danger"><i class="bi bi-trash3"></i></button></td>
+                                </tr>
                         </tbody>
                     </table>
                 </div>
@@ -60,6 +84,142 @@
                                     </div>
 
                                     <div class="row">
+                                        <div class="col-lg-4">
+                                            <div class="card">
+                                                <div class="card-header d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    18/11/2023
+                                                </div>
+                                                <div class="d-flex justify-content-center align-items-center">
+                                                    <button
+                                                        type="button"
+                                                        class="btn btn-outline-primary btn-icon-split me-2"
+                                                        data-bs-toggle="modal"
+                                                        data-bs-target="#editCourses"
+                                                        ><i class="bi bi-pencil-square"></i>
+                                                    </button>
+                                                    <form action="#" method="POST">
+                                                        <input type="hidden" name="_method" value="DELETE">
+                                                        <?= csrf_field() ?>
+                                                        <button class="btn btn-outline-danger"><i class="bi bi-trash3"></i></button>
+                                                    </form>
+                                                </div>    
+                                                </div>
+                                                <div class="card-body">
+                                                    <a href="<?php echo base_url('detail_courses')?>">
+                                                        <h5 class="card-title">Task 1</h5>
+                                                    </a>
+                                                    Hello students,
+                                                    This week's physics assignment explores applying concepts to everyday phenomena.
+                                                    Any questions? Ask on the forum or message me.
+                                                    Enjoy the assignment!
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                        <div class="col-lg-4">
+                                            <div class="card">
+                                                <div class="card-header d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    18/11/2023
+                                                </div>
+                                                <div class="d-flex justify-content-center align-items-center">
+                                                    <button
+                                                        type="button"
+                                                        class="btn btn-outline-primary btn-icon-split me-2"
+                                                        data-bs-toggle="modal"
+                                                        data-bs-target="#editCourses"
+                                                        ><i class="bi bi-pencil-square"></i>
+                                                    </button>
+                                                    <form action="#" method="POST">
+                                                        <input type="hidden" name="_method" value="DELETE">
+                                                        <?= csrf_field() ?>
+                                                        <button class="btn btn-outline-danger"><i class="bi bi-trash3"></i></button>
+                                                    </form>
+                                                </div>    
+                                                </div>
+                                                <div class="card-body">
+                                                    <a href="<?php echo base_url('detail_courses')?>">
+                                                        <h5 class="card-title">Task 1</h5>
+                                                    </a>
+                                                    Hello students,
+                                                    This week's physics assignment explores applying concepts to everyday phenomena.
+                                                    Any questions? Ask on the forum or message me.
+                                                    Enjoy the assignment!
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                        <div class="col-lg-4">
+                                            <div class="card">
+                                                <div class="card-header d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    18/11/2023
+                                                </div>
+                                                <div class="d-flex justify-content-center align-items-center">
+                                                    <button
+                                                        type="button"
+                                                        class="btn btn-outline-primary btn-icon-split me-2"
+                                                        data-bs-toggle="modal"
+                                                        data-bs-target="#editCourses"
+                                                        ><i class="bi bi-pencil-square"></i>
+                                                    </button>
+                                                    <form action="#" method="POST">
+                                                        <input type="hidden" name="_method" value="DELETE">
+                                                        <?= csrf_field() ?>
+                                                        <button class="btn btn-outline-danger"><i class="bi bi-trash3"></i></button>
+                                                    </form>
+                                                </div>    
+                                                </div>
+                                                <div class="card-body">
+                                                    <a href="<?php echo base_url('detail_courses')?>">
+                                                        <h5 class="card-title">Task 1</h5>
+                                                    </a>
+                                                    Hello students,
+                                                    This week's physics assignment explores applying concepts to everyday phenomena.
+                                                    Any questions? Ask on the forum or message me.
+                                                    Enjoy the assignment!
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                        <div class="col-lg-4">
+                                            <div class="card">
+                                                <div class="card-header d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    18/11/2023
+                                                </div>
+                                                <div class="d-flex justify-content-center align-items-center">
+                                                    <button
+                                                        type="button"
+                                                        class="btn btn-outline-primary btn-icon-split me-2"
+                                                        data-bs-toggle="modal"
+                                                        data-bs-target="#editCourses"
+                                                        ><i class="bi bi-pencil-square"></i>
+                                                    </button>
+                                                    <form action="#" method="POST">
+                                                        <input type="hidden" name="_method" value="DELETE">
+                                                        <?= csrf_field() ?>
+                                                        <button class="btn btn-outline-danger"><i class="bi bi-trash3"></i></button>
+                                                    </form>
+                                                </div>    
+                                                </div>
+                                                <div class="card-body">
+                                                    <a href="<?php echo base_url('detail_courses')?>">
+                                                        <h5 class="card-title">Task 1</h5>
+                                                    </a>
+                                                    Hello students,
+                                                    This week's physics assignment explores applying concepts to everyday phenomena.
+                                                    Any questions? Ask on the forum or message me.
+                                                    Enjoy the assignment!
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
                                         <div class="col-lg-4">
                                             <div class="card">
                                                 <div class="card-header d-flex justify-content-between align-items-center">

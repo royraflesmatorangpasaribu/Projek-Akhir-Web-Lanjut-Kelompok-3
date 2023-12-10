@@ -2,7 +2,7 @@
 
 <?= $this->section('content') ?>
   <main id="main" class="main">
-    <section id="hero" class="d-flex justify-content-center align-items-center">
+    <section class="d-flex justify-content-center align-items-center">
     <div class="container position-relative" data-aos="zoom-in" data-aos-delay="100">
       <h1>Task</h1>
           <div class="row">
@@ -12,8 +12,6 @@
                     <thead>
                       <tr>
                         <th scope="col">No</th>
-                        <th scope="col">Kelas</th>
-                        <th scope="col">Task</th>
                         <th scope="col">Nama Siswa</th>
                         <th scope="col">File</th>
                         <th scope="col">Nilai</th>
@@ -25,28 +23,22 @@
                         <?php foreach ($task as $ts) : ?>
                             <tr>
                                 <th scope="row"><?= $i++; ?></th>
-                                <td><?= $ts->id_kelas ?></td>
-                                <td><?= $ts->id_task ?></td>
                                 <td><?= $ts->nama_siswa ?></td>
-                                <td><?= $ts->file ?></td>
+                                <td><a href="<?= base_url('view/' . $ts->id ) ?>"><i class="fa fa-file-pdf-o" style="font-size:48px;color:red"></i></a></td>
                                 <td><?= $ts->nilai ?></td>
                                 <td>
-                                <!-- <button
-                                    type="button"
-                                    class="btn btn-outline-primary btn-icon-split me-2"
-                                    data-bs-toggle="modal"
-                                    data-bs-target="#editTaskDetail<?= $ts->id ?>"
-                                    ><i class="bi bi-pencil-square"></i>
-                                </button> -->
-                                <a href="<?= base_url('/user/'. $ts->id . '/edit?taskid='.$taskid) ?>" type="button" class="btn btn-info"><i class="bi bi-pencil-square"></i></a>
-                                
-                                <form action="<?= base_url('/nilai/' . $ts->id ) ?>" method="POST">
-                                    <input type="hidden" name="_method" value="DELETE">
-                                    <input type="hidden" name="taskid" value="<?= $taskid ?>">
-                                    <?= csrf_field() ?>
-                                    <button class="btn btn-outline-danger"><i class="bi bi-trash3"></i></button>
-                                </form>
+                                    <div class="btn-group" role="group">
+                                        <a href="<?= base_url('/user/'. $ts->id . '/edit?taskid='.$taskid) ?>" type="button" class="btn btn-info"><i class="bi bi-pencil-square"></i></a>
+                                    
+                                        <form action="<?= base_url('/nilai/' . $ts->id ) ?>" method="POST">
+                                            <input type="hidden" name="_method" value="DELETE">
+                                            <input type="hidden" name="taskid" value="<?= $taskid ?>">
+                                            <?= csrf_field() ?>
+                                            <button class="btn btn-outline-danger"><i class="bi bi-trash3"></i></button>
+                                        </form>
+                                    </div>
                                 </td>
+
                             </tr>
                             <div 
                                 class="modal fade" 

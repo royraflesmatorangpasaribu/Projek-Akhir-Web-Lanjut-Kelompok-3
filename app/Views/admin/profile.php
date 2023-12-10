@@ -1,15 +1,26 @@
-<?= $this->extend('layouts/app2') ?>
+<?= $this->extend('layouts/app') ?>
 
 <?= $this->section('content') ?>
+
 <main id="main" class="main">
-    <section id="hero" class="d-flex justify-content-center align-items-center">
-    <div class="container position-relative" data-aos="zoom-in" data-aos-delay="100">
-    <div class="container-fluid">
-        <div class="row d-flex justify-content-center align-items-center h-100">
-            <div class="col col-lg-6 mb-4 mb-lg-0">
-                <div class="card shadow mb-3" style="border-radius: 0.5rem">
-                <div class="row g-0">
-                <div class="card-body p-4">
+
+<div class="pagetitle">
+  <h1>Profile</h1>
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item active">Profile</li>
+    </ol>
+  </nav>
+</div><!-- End Page Title -->
+
+<section class="section profile">
+  <div class="row">
+    <div class="col-xl-12">
+
+      <div class="card">
+        <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
+
+          <img src="<?= base_url(); ?>/assets/img/profile.jpg" alt="Profile" class="rounded-circle">
                             <h4>My Profile</h4>
                             <hr class="mt-0 mb-4" />
                             <div class="row pt-1">
@@ -23,7 +34,7 @@
                                     <?= user()->email; ?>
                               </div>
                           <ul class="d-grid gap-2 d-md-flex justify-content-md-end">
-                            <a href="<?= base_url('profile_edit/' . user()->id . '/edit') ?>" class="btn btn-warning">Edit</a>
+                            <a href="<?= base_url('profile_admin/' . user()->id . '/edit') ?>" class="btn btn-warning">Edit</a>
                           </ul>
                           </div>
               </div>

@@ -97,12 +97,12 @@ class Admin extends BaseController
 {
     if (in_groups('student')) {
         return redirect()->to('/student');
-    } elseif (in_groups('parent')) {
+    } elseif (in_groups('parents')) {
         return redirect()->to('/parent');
     } elseif (in_groups('super_admin')) {
         return redirect()->to('/admin');
-    } elseif (in_groups('teacher')) {
-        return redirect()->to('/teacher');
+    } elseif (in_groups('teachers')) {
+        return redirect()->to('/dashboard_teacher');
     } else {
         // Handle case where user doesn't belong to any known group
         return redirect()->to('/');

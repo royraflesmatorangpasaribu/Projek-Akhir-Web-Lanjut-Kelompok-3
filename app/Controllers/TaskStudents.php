@@ -63,58 +63,45 @@ class TaskStudents extends BaseController
         return view('students/upload_task', $data);
     }
 
+
     public function do_upload()
 {
-    $this->taskdetailModel->saveTask([
-        'id_kelas'      => $this->request->getVar('id_kelas'),
-        'nama_siswa'      => $this->request->getVar('nama_siswa'),
-        'id_task'       => $this->request->getVar('id_task'),
-       'file'       =>  $this->request->getFile('pdf_file'),
-    ]);
+    
+    $path = 'uploads';
 
     $file = $this->request->getFile('pdf_file');
-    $nama_siswa = $this->request->getVar('nama_siswa');
-    $id_kelas = $this->request->getVar('id_kelas');
-    $id_task = $this->request->getVar('id_task');
+    $name = url_title($file->getRandomName(), '_', true); // Create a URL-friendly version of the filename
 
-    if ($file && $file->isValid() && !$file->hasMoved()) {
-        // Pindahkan file ke direktori uploads dengan menggunakan nama asli
-        $newName = $file->getName(); // Atau $file->getName() jika Anda ingin menggunakan nama asli
-        $file->move('./uploads', $newName);
+    if ($file->move($path, $name)) {
+        $filePath = $name;
 
-        // Simpan informasi file dan ID kelas dan task ke dalam database
-        $detailTaskModel = new TaskDetailModel();
+        $this->taskdetailModel->saveTask([
+            'id_kelas' => $this->request->getVar('id_kelas'),
+            'nama_siswa' => $this->request->getVar('nama_siswa'),
+            'id_task' => $this->request->getVar('id_task'),
+            'file' => $name, // Use the file path, not the base_url
+        ]);
+
         $data = [
-            'filename' => $newName,
-            'filepath' => base_url('uploads/' . $newName),
-            'id_kelas' => $id_kelas,
-            'id_task' => $id_task,
-            'nama_siswa' => $nama_siswa,
+            'id_kelas' => $this->request->getVar('id_kelas'),
+            'nama_siswa' => $this->request->getVar('nama_siswa'),
+            'id_task' => $this->request->getVar('id_task'),
         ];
 
-        return redirect()->to('/task_students')->with('success', 'File berhasil diunggah!');
+        return redirect()->to('/task_students');
     } else {
         return redirect()->to('/upload')->with('error', 'Gagal mengunggah file.');
     }
 }
 
-public function viewFile($file)
-{
-    $filePath = FCPATH . 'uploads/' . $file;
-
-    if (file_exists($filePath)) {
-        return $this->response->download($filePath, null)->setHeader('Content-Type', mime_content_type($filePath));
-    } else {
-        return redirect()->to('/task_students')->with('error', 'File tidak ditemukan.');
-    }
-}
-
-public function redirect(){
-    if(in_groups("user")){
-        return redirect()->to("/student");
-    }else{
-        return redirect()->to("/admin");
-    }  
-}
-
+    
+    public function view($id_pdf)
+        {
+            $data = array(
+                'title' => 'View PDF',
+                'file'  => $this->taskdetailModel->getTask($id_pdf),
+    
+            );
+            return view('students/detailpdf', $data);
+        }
 }

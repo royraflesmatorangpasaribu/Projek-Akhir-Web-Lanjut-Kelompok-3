@@ -22,7 +22,6 @@
                         <th scope="col">Nama Siswa</th>
                         <th scope="col">File</th>
                         <th scope="col">Nilai</th>
-                        <th scope="col">Aksi</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -33,12 +32,8 @@
                                 <td><?= $ts->id_kelas ?></td>
                                 <td><?= $ts->id_task ?></td>
                                 <td><?= $ts->nama_siswa ?></td>
-                                <td><?= $ts->file ?></td>
+                                <td><a href="<?= base_url('view/' . $ts->id ) ?>"><i class="fa fa-file-pdf-o" style="font-size:48px;color:red"></i></a></td>
                                 <td><?= $ts->nilai ?></td>
-                                <td>
-                                <a href="<?= base_url('view/' . $ts->file ) ?>" target="_blank" class="btn btn-primary">Lihat File</a>
-
-                                </td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>

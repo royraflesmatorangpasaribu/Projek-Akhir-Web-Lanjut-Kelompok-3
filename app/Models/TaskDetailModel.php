@@ -59,5 +59,13 @@ class TaskDetailModel extends Model
         return $this->delete($id);
     }
     
+    public function getName()
+    {
+        return $this->db->table('detail_task')
+            ->join('kelas', 'kelas.id = detail_task.id_kelas')
+            ->join('task', 'task.id = detail_task.id_task')
+            ->get()
+            ->getResultArray();
+    }
     
 }

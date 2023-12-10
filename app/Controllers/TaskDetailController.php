@@ -28,13 +28,18 @@ class TaskDetailController extends BaseController
         
         $data['title']  = 'Task Detail';
        
-        $this->builder->select('detail_task.*');
+        $this->builder->select('detail_task.id, detail_task.nama_siswa, detail_task.file, detail_task.nilai');
         $this->builder->join('task', 'detail_task.id_task = task.id');
+        $this->builder->join('kelas', 'detail_task.id_task = kelas.id');
         $this->builder->where('detail_task.id_task', $id);
         $query = $this->builder->get();
 
         $data['task']  = $query->getResult();
-
+        // $data = [
+        //     'name'   => $this->taskModel->getName(),
+        //     'task'     => $this$query->getResult(),
+        //     'class'     => $this->classModel->getClass()
+        // ];
         $data['taskid'] = $id; 
         //dd(session('taskid'));
        
@@ -98,5 +103,7 @@ class TaskDetailController extends BaseController
     
           ->with('success', 'Berhasil menghapus data');
         }
+
+        
 
 }

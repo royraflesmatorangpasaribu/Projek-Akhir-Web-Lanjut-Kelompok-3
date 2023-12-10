@@ -8,19 +8,23 @@ use App\Models\ClassModel;
 
 class TaskController extends BaseController
 {
- 
+    protected $modelName    = 'App\Models\TaskModel';
     public $taskModel;
     public $classModel;
+    protected $db, $builder; 
 
     public function __construct(){
+        $this-> db      = \Config\Database::connect();
         $this->taskModel = new TaskModel();
         $this->classModel = new ClassModel();
+        $this-> builder = $this->db->table('task');
     }
     public function task()
     {
         
         if(session('taskid')!=null)return redirect()->to('/task/detail/'.session('taskid'));
         $data = [
+            'name'   => $this->taskModel->getName(),
             'task'     => $this->taskModel->getTask(),
             'class'     => $this->classModel->getClass()
         ];

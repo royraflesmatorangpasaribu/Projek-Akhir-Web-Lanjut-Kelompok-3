@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>E-Learning Bootstrap Template - Index</title>
+  <title>View PDF</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -33,46 +33,39 @@
 </head>
 
 <body>
-
-  <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center justify-content-between">
-
-      <h1 class="logo me-auto"><a href="index.html">E-Learning</a></h1>
-
-      <nav id="navbar" class="navbar order-last order-lg-0">
-        <ul>
-          <li><a href="<?php echo base_url('dashboard_teacher')?>">Home</a></li>
-          <li><a href="<?php echo base_url('task')?>">Courses</a></li>
-          <li><a href="<?= base_url('user') ?>">Profile</a></li>
-          <li><a href="<?= base_url('logout') ?>">Logout</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav>
-
+      <h1 class="logo me-auto"><a href="index.html">View File</a></h1>
     </div>
   </header>
-  <!-- End Header -->
-  
-  <?= $this->renderSection('content') ?>
-
-    <!-- ======= Footer ======= -->
-    <footer id="footer" class="fixed-bottom">
-
-<div class="container d-md-flex py-4">
-
-  <div class="me-md-auto text-center text-md-start">
-    <div class="copyright">
-      &copy; Copyright <strong><span>E-Learning</span></strong>. All Rights Reserved
+  <div class="col-sm-12">
+  <main id="main">
+<section id="popular-courses" class="courses">
+    <div class="container">
+    <table class="table table-bordered">
+        <tr>
+            <th width="50px">Nama</th>
+            <th width="50px">:</th>
+            <th><?= $file['nama_siswa'] ?></th>
+            <th width="50px">Nilai</th>
+            <th width="50px">:</th>
+            <th><?= $file['nilai'] ?></th>
+        </tr>
+        <tr>
+            <th>Created At</th>
+            <th>:</th>
+            <th><?= $file['created_at'] ?></th>
+            <th>Updated At</th>
+            <th>:</th>
+            <th><?= $file['updated_at'] ?></th>
+        </tr>
+    </table>
     </div>
-  </div>
-</div>
-</footer><!-- End Footer -->
+    <div class="col-sm-12">
+        <center><iframe src="<?= base_url('uploads/' . $file['file']) ?>" width="90%" height="800" style="border:1px solid black;"></iframe></center>
+    </div>
 
-<div id="preloader"></div>
-<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-<!-- Vendor JS Files -->
+</main><!-- End #main -->
 <script src="<?= base_url(); ?>/assets/vendor/purecounter/purecounter_vanilla.js"></script>
 <script src="<?= base_url(); ?>/assets/vendor/aos/aos.js"></script>
 <script src="<?= base_url(); ?>/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
