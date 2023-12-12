@@ -30,8 +30,20 @@ class Admin extends BaseController
        
         $query = $this->builder->get();
     
-        $data['users'] = $query->getResult();
-        //dd($data['users']);
+        // $data['users'] = $query->getResult();
+        // //dd($data['users']);
+
+        // $data = [
+        //     'user_count' => $this->userModel->countUser()
+        // ];
+
+        $data = [
+            'teachers_count' => $this->userModel->countTeacher(),
+            'students_count' => $this->userModel->countStudent(),
+            'parents_count' => $this->userModel->countParent(),
+            'users' => $query->getResult()
+        ];
+        
         
         return view('admin/index', $data);
     }
