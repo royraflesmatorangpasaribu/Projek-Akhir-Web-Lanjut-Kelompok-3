@@ -13,6 +13,8 @@ class StudentController extends BaseController
 {
     public $db, $builder; 
     public $userModel;
+    public $studentsModel;
+
 
     public $InformationModel;
 
@@ -26,10 +28,11 @@ class StudentController extends BaseController
         $this-> builder = $this->db->table('users');
     }
 
+
     public function information()
     {
         $data = [
-            'information'     => $this->InformationModel->getInformation()
+            'information'     => $this->InformationModel->getInformation(),
         ];
 
         return view('information_students',$data);

@@ -126,7 +126,7 @@
 
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#">
+        <a class="nav-link collapsed" href="<?= base_url('logout') ?>">
           <i class="bi bi-box-arrow-in-right"></i>
           <span>Logout</span>
         </a>

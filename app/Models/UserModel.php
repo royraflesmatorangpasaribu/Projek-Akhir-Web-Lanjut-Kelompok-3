@@ -228,7 +228,23 @@ class UserModel extends Model
     public function updateTeacher($id, $data){
         return $this->update($id, $data);
     }
-    
 
-    
+    public function countTeacher(){
+        return $this->db->table('auth_groups_users')
+        ->where('group_id', 2)
+        ->countAllResults();
+    }
+
+    public function countStudent(){
+        return $this->db->table('auth_groups_users')
+        ->where('group_id', 3)
+        ->countAllResults();
+    }
+
+    public function countParent(){
+        return $this->db->table('auth_groups_users')
+        ->where('group_id', 4)
+        ->countAllResults();
+    }
+
 }
