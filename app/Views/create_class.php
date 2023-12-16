@@ -1,4 +1,4 @@
-<?= $this->extend('layouts/app') ?>
+<?= $this->extend('templates/index') ?>
 
 <?= $this->section('content') ?>
 
@@ -7,7 +7,7 @@
       <h1>Dashboard</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="<?php echo base_url('class'); ?>">Class</a></li>
+          <li class="breadcrumb-item"><a href="<?php echo base_url('/class/create'); ?>">Class</a></li>
           <li class="breadcrumb-item active">Create Class</li>
         </ol>
       </nav>
@@ -24,17 +24,32 @@
                   <h5 class="card-title">New Class</h5>
     
                   <!-- Multi Columns Form -->
-                  <form class="row g-3" action="" method="post">
-                    <div class="col-md-12">
+                  <form class="row g-3" action="<?= base_url('/class/create'); ?>" method="post">
+                    <!-- <div class="col-md-8">
                       <label for="inputName5" class="form-label">Class Name</label>
                       <input type="text" class="form-control" id="inputName5" name="nama_kelas">
+                    </div> -->
+
+                    <div class="col-md-8">
+                      <label for="inputName5" class="form-label">Class Name</label>
+                      <input type="text" class="form-control <?= (empty(validation_show_error('nama_kelas'))) ? '' : 'is-invalid' ?>"  name="nama_kelas" value="<?= old('nama_kelas')?>">
+                      <div class='invalid-feedback'>
+                      <?= validation_show_error('nama_kelas'); ?>
+                      </div>
                     </div>
-                    <div class="col-md-6">
+
+                    <!-- <div class="col-md-8">
                       <label for="inputEmail5" class="form-label">Capasity Class</label>
                       <input type="text" class="form-control" id="inputEmail5" name="daya_tampung">
-                    </div>
+                    </div> -->
                    
-                    
+                    <div class="col-md-8">
+                      <label for="inputEmail5" class="form-label">Capasity Class</label>
+                      <input type="text" class="form-control <?= (empty(validation_show_error('daya_tampung'))) ? '' : 'is-invalid' ?>"  name="daya_tampung" value="<?= old('daya_tampung')?>">
+                      <div class='invalid-feedback'>
+                      <?= validation_show_error('daya_tampung'); ?>
+                      </div>
+                    </div>
 
                     <!-- ubah ke kanan -->
                     <div class="text-left">

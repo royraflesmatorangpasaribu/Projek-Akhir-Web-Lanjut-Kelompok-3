@@ -12,10 +12,12 @@
              <input type="hidden" name="_method" value="PUT">
               <input type="hidden" name="taskid" value="<?= $taskid ?>">
               <?= csrf_field() ?>
+
                <div class="mb-3">
                     <label for="nilai" class="col-form-label">Nilai</label>
                           <textarea class="form-control" name="nilai" value=""><?= $nilai['nilai']  ?></textarea>
                 </div>
+                
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary">Input Nilai</button>

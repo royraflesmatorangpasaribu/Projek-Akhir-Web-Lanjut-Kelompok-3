@@ -73,23 +73,50 @@ class InformationController extends BaseController
         return view('information', $data);
     }
 
+    public function create_information()
+    {
+        return view('create_information');
+    }
+
     public function store(){
-        $this->InformationModel->saveInformation([
+       
+      
+
+        // validasi
+        if(!$this->validate([
+            'recipient-date' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} harus di isi!!',
+                ]   
+            ],
+            'title' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} harus di isi!!',
+                ]
+            ],
+            'message-text' => [
+                'rules' => 'required',
+                'errors' => [
+                'required' => '{field} harus di isi!!',
+                ]
+            ],
+           
+        ])){
+           
+    
+            return redirect()->back()->withInput();
+        }
+
+        $data = [
             'date'      => $this->request->getVar('recipient-date'),
             'title'      => $this->request->getVar('title'),
-            'text'       => $this->request->getVar('message-text'),
-        ]);
-
-        $InformationModel = new InformationModel();
-        $date = $this->request->getPost('recipient-date');
-        $title = $this->request->getPost('title');
-        $text = $this->request->getPost('message-text');
-
-        $data=[
-            'date' => $date,
-            'title' => $title,
-            'text' => $text,
+            'text'       => $this->request->getVar('message-text'),  
         ];
+        // dd($data);
+
+        $this->InformationModel->saveInformation($data);
 
         return redirect()->to(base_url('/information'));
     }

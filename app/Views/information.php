@@ -1,4 +1,4 @@
-<?= $this->extend('layouts/app') ?>
+<?= $this->extend('templates/index') ?>
 
 <?= $this->section('content') ?>
 
@@ -19,14 +19,13 @@
                 <div class="card recent-sales overflow-auto">
                     <div class="card-body">
                         <div class="card-title">
-                            <button
-                              type="button"
+                            <a
+                              
+                              href=<?= base_url('/information/create_information')?>
                               class="btn btn-primary"
-                              data-bs-toggle="modal"
-                              data-bs-target="#addInformation"
                               ><i class="bi bi-plus-circle me-1"></i>
                               Add Information
-                            </button>
+                            </a>
                         </div>
 
                         <div class="row">
@@ -102,41 +101,8 @@
                             ?>
                         </div>
 
-                        <div 
-                            class="modal fade" 
-                            id="addInformation" 
-                            tabindex="-1" 
-                            aria-labelledby="exampleModalLabel" 
-                            aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Add Information</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form action="<?= base_url('information/store' )?>" method="post">
-                                            <div class="mb-3">
-                                                <label for="recipient-date" class="col-form-label">Date</label>
-                                                <input type="date" class="form-control" name="recipient-date">
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="title" class="col-form-label">Title</label>
-                                                <input type="text" class="form-control" name="title">
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="message-text" class="col-form-label">Message</label>
-                                                <textarea class="form-control" name="message-text"></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                                            <button type="submit" class="btn btn-primary">Save Information</button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        
+
                         
                     </div>
                 </div>

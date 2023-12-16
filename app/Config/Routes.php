@@ -16,6 +16,7 @@ use Config\Auth;
  * @var RouteCollection $routes
  */
 $routes->get('/', 'Home::dashboard_students');
+$routes->get('/coba', 'Home::create_information');
 $routes->get('/redirect', 'Admin::redirect');
 // $routes->get('/admin', 'Admin::index');
 
@@ -76,6 +77,7 @@ $routes->group('', ['namespace' => 'App\Controllers'], static function ($routes)
     $routes->get('/students', 'Home::students', ['filter' => 'role:super_admin']);
     $routes->get('/teacher', 'Home::teacher', ['filter' => 'role:super_admin']);
     $routes->get('/class', 'Home::class', ['filter' => 'role:super_admin']);
+    $routes->post('/class/create', 'Home::store', ['filter' => 'role:super_admin']);
     $routes->get('/create_class', 'Home::create_class', ['filter' => 'role:super_admin']);
     $routes->post('/create_class', 'Home::create_class', ['filter' => 'role:super_admin']);
     $routes->get('/edit_class', 'Home::edit_class', ['filter' => 'role:super_admin']);
@@ -87,6 +89,7 @@ $routes->group('', ['namespace' => 'App\Controllers'], static function ($routes)
 
 
     $routes->get('/information', [InformationController::class, 'information'], ['filter' => 'role:super_admin']);
+    $routes->get('/information/create_information', [InformationController::class, 'create_information'], ['filter' => 'role:super_admin']);
     $routes->post('information/store', [InformationController::class, 'store'], ['filter' => 'role:super_admin']);
     $routes->put('information/(:any)', [InformationController::class,'update/$1'], ['filter' => 'role:super_admin']);
     $routes->delete('/information/(:any)', [InformationController::class,'destroy/$1'], ['filter' => 'role:super_admin']);

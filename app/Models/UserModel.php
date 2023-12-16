@@ -202,6 +202,14 @@ class UserModel extends Model
         ]);
     }
 
+    public function saveClass($data){
+        return $this->db->table('kelas')->insert($data);
+    }
+
+    public function saveUsers($data){
+        return $this->db->table('users')->insert($data);
+    }
+
     public function deleteUser($id){
         return $this->delete($id);
     }
@@ -247,4 +255,13 @@ class UserModel extends Model
         ->countAllResults();
     }
 
+    public function countTask(){
+        return $this->db->table('detail_task')
+        ->countAllResults();
+    }
+
+    public function countClass(){
+        return $this->db->table('kelas')
+        ->countAllResults();
+    }
 }

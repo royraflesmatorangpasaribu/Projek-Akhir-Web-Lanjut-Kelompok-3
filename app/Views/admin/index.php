@@ -8,7 +8,6 @@
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="#">Home</a></li>
-          <li class="breadcrumb-item active" href="<?php echo base_url('dashboard_super_admin'); ?>">Dashboard</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -116,12 +115,12 @@
                                 <td><?= $user->name; ?></td>
                                 <td > 
                                   <div class="d-flex ">
-                                    <a href="<?= base_url('admin/edit?id=' . $user->userid) ?>" class="btn btn-success" style="width:100px;">Edit</a>
+                                    <a href="<?= base_url('admin/edit?id=' . $user->userid) ?>" class="btn btn-success me-2" style="width:100px;">Edit</a>
                                
                                 <form method="post" action="<?= site_url('/admin/delete/' . $user->userid) ?>" >
                                   <input type="hidden" name="_method" value="DELETE">
                                       <?= csrf_field() ?>
-                                    <button type="submit" name="delete" class="btn btn-danger" style="width:100px;">Delete</button>
+                                    <button type="submit" name="delete" class="btn btn-danger me-2" style="width:100px;">Delete</button>
                                 </form>
                                   </div>
                                 </td>

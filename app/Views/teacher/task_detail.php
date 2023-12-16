@@ -27,14 +27,14 @@
                                 <td><a href="<?= base_url('view/' . $ts->id ) ?>"><i class="fa fa-file-pdf-o" style="font-size:48px;color:red"></i></a></td>
                                 <td><?= $ts->nilai ?></td>
                                 <td>
-                                    <div class="btn-group" role="group">
-                                        <a href="<?= base_url('/user/'. $ts->id . '/edit?taskid='.$taskid) ?>" type="button" class="btn btn-info"><i class="bi bi-pencil-square"></i></a>
+                                    <div class="d-flex" role="group">
+                                        <a href="<?= base_url('/user/'. $ts->id . '/edit?taskid='.$taskid) ?>" type="button" class="btn btn-outline-info me-2"><i class="bi bi-pencil-square"></i></a>
                                     
                                         <form action="<?= base_url('/nilai/' . $ts->id ) ?>" method="POST">
                                             <input type="hidden" name="_method" value="DELETE">
                                             <input type="hidden" name="taskid" value="<?= $taskid ?>">
                                             <?= csrf_field() ?>
-                                            <button class="btn btn-outline-danger"><i class="bi bi-trash3"></i></button>
+                                            <button class="btn btn-outline-danger me-2"><i class="bi bi-trash3"></i></button>
                                         </form>
                                     </div>
                                 </td>
@@ -70,7 +70,7 @@
                                   </div>
                                   </div>
                                   </div>
-                            </div>``
+                            </div>
                         <?php endforeach; ?>
                     </tbody>
                   </table>

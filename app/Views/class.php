@@ -1,4 +1,4 @@
-<?= $this->extend('layouts/app') ?>
+<?= $this->extend('templates/index') ?>
 
 <?= $this->section('content') ?>
 
@@ -17,7 +17,7 @@
       <div class="row">
 
         <!-- Left side columns -->
-        <div class="col-lg-8">
+        <div class="col-lg-12">
           <div class="row">
 
             <!-- Teacher Tabel -->
@@ -48,13 +48,13 @@
                                 
                                 <td > 
                                   <div class="d-flex ">
-                                    <a href="<?= base_url('edit_class?id=' . $c->id) ?>" class="btn btn-success" style="width:100px;">Edit</a>
+                                    <a href="<?= base_url('edit_class?id=' . $c->id) ?>" class="btn btn-success me-2" style="width:100px;">Edit</a>
                                
                                 <form method="post" action="/class/delete" >
                                  
                                       <?= csrf_field() ?>
                                       <input type="hidden" name="class_id" value="<?= $c->id;?>"/>
-                                    <button type="submit" name="delete" class="btn btn-danger" style="width:100spx;">Delete</button>
+                                    <button type="submit" name="delete" class="btn btn-danger me-2" style="width:100spx;">Delete</button>
                                 </form>
                                   </div>
                                 </td>
@@ -69,46 +69,7 @@
           </div>
         </div><!-- End Left side columns -->
 
-        <!-- Right side columns -->
-        <div class="col-lg-4">
-          <!-- News & Updates Traffic -->
-          <div class="card">
-            <div class="filter">
-            </div>
-
-            <div class="card-body pb-0">
-              <h5 class="card-title">News &amp; Updates <span>| Today</span></h5>
-
-              <div class="news">
-                <div class="post-item clearfix">
-                  <img src="<?php echo base_url('assets/img/news.png'); ?>" alt="">
-                  <h4><a href="#">Judul Berita</a></h4>
-                  <p>...</p>
-                </div>
-
-                <div class="news">
-                  <div class="post-item clearfix">
-                    <img src="<?php echo base_url('assets/img/news.png'); ?>" alt="">
-                    <h4><a href="#">Judul Berita</a></h4>
-                    <p>...</p>
-                  </div>
-
-                  <div class="news">
-                    <div class="post-item clearfix">
-                      <img src="<?php echo base_url('assets/img/news.png'); ?>" alt="">
-                      <h4><a href="#">Judul Berita</a></h4>
-                      <p>...</p>
-                    </div>
-
-                    <div class="news">
-                      <div class="post-item clearfix">
-                        <img src="<?php echo base_url('assets/img/news.png'); ?>" alt="">
-                        <h4><a href="#">Judul Berita</a></h4>
-                        <p>...</p>
-                      </div>        
-            </div>
-          </div><!-- End News & Updates -->
-        </div><!-- End Right side columns -->
+        
       </div>
     </section>
     <?php 

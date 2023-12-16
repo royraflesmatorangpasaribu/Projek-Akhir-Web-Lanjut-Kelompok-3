@@ -1,4 +1,4 @@
-<?= $this->extend('layouts/app') ?>
+<?= $this->extend('templates/index') ?>
 
 <?= $this->section('content') ?>
 
@@ -19,7 +19,7 @@
 
       <div class="card">
         <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
-        <img src="<?= base_url(); ?>/assets/img/profile.jpg" alt="Profile" class="rounded-circle">
+        <img src="<?= base_url(); ?>assets/img/foto_def.png" alt="Profile" class="rounded-circle">
                 <form action="<?= base_url('profile_admin/' . $user['id'] . '/update')?>" method="post" >
                 <input type="hidden" name="_method" value="PUT">
                 <?= csrf_field() ?>
