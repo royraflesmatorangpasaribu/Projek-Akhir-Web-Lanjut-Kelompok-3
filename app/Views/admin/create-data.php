@@ -7,7 +7,7 @@
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="#">Home</a></li>
-          <li class="breadcrumb-item active" href="<?php echo base_url('dashboard_super_admin'); ?>">Dashboard</li>
+          <li class="breadcrumb-item active" href="#">Add New Users</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -26,9 +26,8 @@
             <form action="<?= url_to('register') ?>" method="post" enctype="multipart/form-data">
             <?= csrf_field() ?>
                 <div class="mb-3">
-                    <label for="nama" class="form-label">Usename</label>
+                    <label for="nama" class="form-label">Username</label>
                     <input name="username" type="text"  class="form-control" id="username" placeholder="Ex : royraflmp">
-                    
                 </div>
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>

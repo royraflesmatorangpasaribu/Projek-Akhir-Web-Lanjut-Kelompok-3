@@ -110,7 +110,7 @@ class Admin extends BaseController
     if (in_groups('student')) {
         return redirect()->to('/student');
     } elseif (in_groups('parents')) {
-        return redirect()->to('/parent');
+        return redirect()->to('/parents');
     } elseif (in_groups('super_admin')) {
         return redirect()->to('/admin');
     } elseif (in_groups('teachers')) {
@@ -146,6 +146,8 @@ class Admin extends BaseController
         return view('/admin/create-data', $data);
 
     }
+
+    
 
     // public function store(){
     //     // $this->groupModel = new GroupModel();

@@ -11,7 +11,10 @@ use Myth\Auth\Password;
 class Home extends BaseController
 {
 
-    protected $db, $builder; 
+    protected $db, $builder;
+    public $userModel;
+    
+ 
   
     public function __construct(){
        $this-> db      = \Config\Database::connect();
@@ -77,6 +80,61 @@ class Home extends BaseController
       
         return view('class',$data);
     }
+
+    public function store()
+    {   
+        
+        // Validate the data if necessary
+        if(!$this->validate([
+            'nama_kelas' => [
+                'rules' => 'required|is_unique[kelas.nama_kelas]',
+                'errors' => [
+                    'required' => '{field} harus di isi!!',
+                    'is_unique' => '{field} sudah terdaftar!!'
+                ]   
+            ],
+            'daya_tampung' => [
+                'rules' => 'required',
+                'errors' => [   
+                    'required' => '{field} harus di isi!!',
+                ]
+            ],
+        ])){
+           
+            return redirect()->back()->withInput();
+        }
+
+        $data = [
+            'nama_kelas'      => $this->request->getVar('nama_kelas'),
+            'daya_tampung'      => $this->request->getVar('daya_tampung'),
+
+        ];
+     
+
+        $this->userModel->saveClass($data);
+
+        return redirect()->to(base_url('/class'));
+    }
+
+    public function update($id){
+        // $id = $this->request->getVar('id');
+        $data = [
+            'date'        => $this->request->getVar('recipient-date'),
+            'title'       => $this->request->getVar('title'),
+            'text'       => $this->request->getVar('message-text'),
+        ];
+
+        $result = $this->InformationModel->updateInformation($data, $id);
+
+        if(!$result){
+            return redirect()->back()->withInput()
+                ->with('error', 'Gagal Menyimpan Data');
+        }
+
+        return redirect()->to(base_url('/information'));
+
+        
+    }
     public function delete_class($class_id=0)
 {
     if ($this->request->getMethod() === 'post') {
@@ -121,9 +179,9 @@ class Home extends BaseController
             $id = $this->request->getVar('id');
             $nama_kelas = $this->request->getVar('nama_kelas');
             $daya_tampung = $this->request->getVar('daya_tampung');
-            
-            // Validate the data if necessary
-            
+        
+
+
             // Insert data into the 'kelas' table
             $data = [
                 'nama_kelas' => $nama_kelas,
@@ -237,9 +295,15 @@ class Home extends BaseController
         return view('parents_dashboard');
     }
 
+
     public function dashboard_students()
     {
-        return view('dashboard_students');
+        $data = [
+            'task_count' => $this->userModel->countTask(),
+            'class_count' => $this->userModel->countClass(),
+        ];
+        // dd($data);
+        return view('dashboard_students', $data);
     }
 
     public function class_students()
@@ -266,6 +330,8 @@ class Home extends BaseController
     {
         return view('profile_students_edit');
     }
+
+   
 
     public function lstud()
     {
