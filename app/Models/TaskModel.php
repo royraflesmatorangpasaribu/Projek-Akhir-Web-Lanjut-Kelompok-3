@@ -12,7 +12,7 @@ class TaskModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['id_kelas','keterangan','created_at','updated_at' ];
+    protected $allowedFields    = ['id','id_kelas','keterangan','created_at','updated_at' ];
 
     // Dates
     protected $useTimestamps = true;
@@ -54,16 +54,36 @@ class TaskModel extends Model
         return $this->update($id, $data);
     }
 
-    public function deleteTask($id){
-        return $this->delete($id);
+    // public function deleteTask($id){
+    //     return $this->delete($id);
+    // }
+    public function deleteTask($id)
+    {
+        // Check if there are related rows in the detail_task table
+        $hasRelatedRows = $this->db->table('detail_task')
+            ->where('id_task', $id)
+            ->countAllResults() > 0;
+    
+        if ($hasRelatedRows) {
+            // Delete related rows in the detail_task table
+            $this->db->table('detail_task')->where('id_task', $id)->delete();
+        }
+    
+        // Now, you can safely delete the task
+        $this->delete($id);
+    
+        // Provide a success message or redirect to an appropriate page
+        return "Task deleted successfully.";
     }
-
+    
     public function getName()
     {
         return $this->db->table('task')
             ->join('kelas', 'kelas.id = task.id_kelas')
+            ->select('task.*, kelas.nama_kelas')
             ->get()
             ->getResultArray();
     }
+    
     
 }
