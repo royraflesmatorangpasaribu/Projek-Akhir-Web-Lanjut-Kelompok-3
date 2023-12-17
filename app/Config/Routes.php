@@ -9,6 +9,7 @@ use App\Controllers\StudentController;
 use App\Controllers\TaskController;
 use App\Controllers\TaskDetailController;
 use App\Controllers\TaskStudents;
+use App\Controllers\Parents;
 use Config\Auth; 
 
 
@@ -128,6 +129,13 @@ $routes->group('', ['namespace' => 'App\Controllers'], static function ($routes)
     // $routes->get('view/(:segment)', 'TaskStudents::viewFile/$1', ['filter' => 'role:students']);
 
     $routes->get('/parents_dashboard', 'Home::dashboard_parents', ['filter' => 'role:parents']);
-    $routes->get('/parents/students', 'Home::lstud', ['filter' => 'role:parents']);
+    $routes->get('/parents/profile', 'Parents::profile_parents', ['filter' => 'role:parents']);
+    $routes->get('/students_detail', [Parents::class, 'task'], ['filter' => 'role:parents']);
+    $routes->get('/students_detail/detail/(:any)', [Parents::class, 'index'], ['filter' => 'role:parents']);
     $routes->get('/parents/students/detail/(:any)', 'Home::detail_stud/$1', ['filter' => 'role:parents']);
+
+    $routes->put('profile_parents/(:any)/update', 'Parents::update/$1', ['filter' => 'role:parents']);
+    $routes->get('profile_parents/(:any)/edit', 'Parents::edit/$1', ['filter' => 'role:parents']);
+    $routes->get('/information_parents', 'Parents::information', ['filter' => 'role:parents']);
+
 });

@@ -5,11 +5,11 @@
 <div id="content">
     <div class="container-fluid">
         <div class="mb-3">
-            <h1 class="h3 text-gray-800">Class</h1>
+            <h1 class="h3 text-gray-800">Task</h1>
             <nav>
                 <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="<?php echo base_url('dashboard_students')?>">Home</a></li>
-                <li class="breadcrumb-item active">Class</li>
+                <li class="breadcrumb-item active">Task</li>
                 </ol>
             </nav>
         </div>
@@ -19,7 +19,7 @@
                     <div class="card-body">
                         <div class="row">
                             <?php
-                                foreach ($task as $ts){
+                                foreach ($name as $ts){
                             ?>
                             <div class="col-lg-4">
                                 <div class="card">
@@ -33,7 +33,7 @@
                                     </div>    
                                     </div>
                                     <div class="card-body">
-                                        <h5 class="card-title"><?= $ts['id_kelas'] ?></h5>
+                                        <h5 class="card-title"><?= $ts['nama_kelas'] ?></h5>
                                         <?= $ts['keterangan'] ?>
                                     </div>
                                     <a href="<?= base_url('upload') ?>" type="button" class="btn btn-primary">Upload</a>

@@ -214,7 +214,10 @@ class UserModel extends Model
         return $this->delete($id);
     }
 
-
+    public function updateParents($id, $data){
+        return $this->update($id, $data);
+    }
+    
     public function getStudents($id = null){
         if($id != null){
             return $this->find($id);

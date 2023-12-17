@@ -4,15 +4,15 @@
 
 <div id='content'>
 <div class="container-fluid">
-        <div class="input-group input-group-sm mb-3">
-            <h1 class="h3 text-gray-800">Class</h1>
+<div class="mb-3">
+    <h1 class="h3 text-gray-800">Task</h1>
             <nav>
                 <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="<?php echo base_url('dashboard_students')?>">Home</a></li>
-                <li class="breadcrumb-item active">Upload Task</li>
+                <li class="breadcrumb-item active">Task</li>
                 </ol>
             </nav>
-        </div>
+</div>
         <div class="row">
             <div class="col-lg-12">
             <form action="<?= base_url('/task/create') ?>" method="post" enctype="multipart/form-data">

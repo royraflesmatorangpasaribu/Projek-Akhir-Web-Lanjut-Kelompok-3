@@ -110,7 +110,7 @@ class Admin extends BaseController
     if (in_groups('student')) {
         return redirect()->to('/student');
     } elseif (in_groups('parents')) {
-        return redirect()->to('/parents');
+        return redirect()->to('/parents_dashboard');
     } elseif (in_groups('super_admin')) {
         return redirect()->to('/admin');
     } elseif (in_groups('teachers')) {

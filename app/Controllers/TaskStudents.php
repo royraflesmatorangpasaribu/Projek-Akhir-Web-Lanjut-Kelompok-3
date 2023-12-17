@@ -24,6 +24,7 @@ class TaskStudents extends BaseController
     public function index()
     {
         $data = [
+            'name'   => $this->taskModel->getName(),
             'task'     => $this->taskModel->getTask(),
             'class'     => $this->classModel->getClass()
         ];
