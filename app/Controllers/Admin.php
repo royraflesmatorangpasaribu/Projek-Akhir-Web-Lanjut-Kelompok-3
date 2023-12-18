@@ -147,6 +147,40 @@ class Admin extends BaseController
 
     }
 
+    // public function store(){
+    
+    //     // validasi
+    //     if(!$this->validate([
+    //         'aaa' => [
+    //             'rules' => 'required',
+    //             'errors' => [
+    //                 'required' => '{field} harus di isi!!',
+    //             ]   
+    //         ],
+    //         'email' => [
+    //             'rules' => 'required',
+    //             'errors' => [
+    //                 'required' => '{field} harus di isi!!',
+    //             ]
+    //         ],
+           
+    //     ])){
+           
+    
+    //         return redirect()->back()->withInput();
+    //     }
+
+    //     $data = [
+    //         'username'      => $this->request->getVar('nama'),
+    //         'email'      => $this->request->getVar('email'),
+    //     ];
+    //     // dd($data);
+
+    //     $this->userModel->saveUser($data);
+
+    //     return redirect()->to(base_url('/admin/create_data'));
+    // }
+
     
 
     // public function store(){

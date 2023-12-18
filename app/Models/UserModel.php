@@ -206,8 +206,8 @@ class UserModel extends Model
         return $this->db->table('kelas')->insert($data);
     }
 
-    public function saveUsers($data){
-        return $this->db->table('users')->insert($data);
+    public function saveUser($data){
+        $this->insert($data);
     }
 
     public function deleteUser($id){

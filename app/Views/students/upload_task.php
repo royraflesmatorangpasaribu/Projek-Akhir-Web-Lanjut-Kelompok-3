@@ -37,12 +37,12 @@
 
                     <div class="mb-3">
                         <label for="nama_siswa" class="form-label">Nama</label>
-                        <input type="text" class="form-control" id="nama_siswa" name="nama_siswa" placeholder="sarah">
+                        <input type="text" class="form-control" id="nama_siswa" name="nama_siswa" placeholder="sarah" required  >
                     </div>
 
                     <div class="input-group mb-3">
                         <label for="pdf_file" class="input-group-text">Upload PDF File</label>
-                        <input type="file" name="pdf_file" class="input-group-text">
+                        <input type="file" name="pdf_file" class="input-group-text" required>
                     </div>
 
                     <button type="submit" class="btn btn-primary">Upload Task</button>
