@@ -4,11 +4,12 @@
     </aside><!-- End Sidebar-->
   <main id="main" class="main">
     <div class="pagetitle">
-      <h1>Dashboard</h1>
+      <h1>Teachers</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="#">Home</a></li>
-          <li class="breadcrumb-item active" href="<?php echo base_url('admin'); ?>">Dashboard</li>
+          <li class="breadcrumb-item"><a href="<?php echo base_url('admin'); ?>">Dashboard</a></li>
+          <li class="breadcrumb-item active" href="">Teachers</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -27,7 +28,7 @@
               <div class="card recent-sales overflow-auto">
 
                 <div class="card-body">
-                  <h5 class="card-title">Teachers Table <span>| Today</span></h5>
+                  <h5 class="card-title">Teachers Table</h5>
 
                   <table class="table table-borderless datatable">
                     <thead>

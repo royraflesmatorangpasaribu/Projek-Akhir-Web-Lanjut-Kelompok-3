@@ -12,10 +12,10 @@
                     <thead>
                       <tr>
                         <th scope="col">No</th>
-                        <th scope="col">Nama Siswa</th>
+                        <th scope="col">Name</th>
                         <th scope="col">File</th>
-                        <th scope="col">Nilai</th>
-                        <th scope="col">Aksi</th>
+                        <th scope="col">Grade</th>
+                        <th scope="col">Action</th>
                       </tr>
                     </thead>
                     <tbody>

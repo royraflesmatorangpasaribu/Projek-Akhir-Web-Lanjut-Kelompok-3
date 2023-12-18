@@ -26,7 +26,7 @@
           <div class="card info-card customers-card">
 
             <div class="card-body">
-              <h5 class="card-title">Teachers <span>| This Year</span></h5>
+              <h5 class="card-title">Teachers</h5>
 
               <div class="d-flex align-items-center">
                 <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -47,7 +47,7 @@
                 <div class="card info-card customers-card">
 
                 <div class="card-body">
-                  <h5 class="card-title">Students <span>| This Year</span></h5>
+                  <h5 class="card-title">Students</h5>
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -69,7 +69,7 @@
               <div class="card info-card customers-card">
 
                 <div class="card-body">
-                  <h5 class="card-title">Parents <span>| This Year</span></h5>
+                  <h5 class="card-title">Parents</h5>
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -90,7 +90,7 @@
               <div class="card recent-sales overflow-auto">
 
                 <div class="card-body">
-                  <h5 class="card-title">Users Table <span>| Today</span></h5>
+                  <h5 class="card-title">Users Table</h5>
 
                   
                   

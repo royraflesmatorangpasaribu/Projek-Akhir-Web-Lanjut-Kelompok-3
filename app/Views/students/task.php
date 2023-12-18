@@ -21,7 +21,7 @@
                             <?php
                                 foreach ($name as $ts){
                             ?>
-                            <div class="col-lg-4">
+                            <div class="col-xl-4">
                                 <div class="card">
                                     <div class="card-header d-flex justify-content-between align-items-center">
                                     <div>

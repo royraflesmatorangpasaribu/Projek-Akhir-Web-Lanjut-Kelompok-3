@@ -4,7 +4,7 @@
 
 <main id="main" class="main">
     <div class="pagetitle">
-      <h1>Dashboard</h1>
+      <h1>Edit Class</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="<?php echo base_url('class'); ?>">Class</a></li>
@@ -32,7 +32,7 @@
                       <input type="text" class="form-control" id="inputName5" name="nama_kelas" value="<?= $val->nama_kelas; ?>">
                     </div>
                     <div class="col-md-6">
-                      <label for="inputEmail5" class="form-label">Capasity Class</label>
+                      <label for="inputEmail5" class="form-label">Capacity Class</label>
                       <input type="text" class="form-control" id="inputEmail5" name="daya_tampung" value="<?= $val->daya_tampung; ?>">
                     </div>
                    
