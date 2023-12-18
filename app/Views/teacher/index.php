@@ -132,7 +132,7 @@
                                             </div>
                                             <div class="mb-3">
                                                 <label for="" class="col-form-label">Description</label>
-                                                <textarea class="form-control" name="keterangan"></textarea>
+                                                <textarea class="form-control" name="keterangan" required></textarea>
                                             </div>
                                         </div>
                                         <div class="modal-footer">

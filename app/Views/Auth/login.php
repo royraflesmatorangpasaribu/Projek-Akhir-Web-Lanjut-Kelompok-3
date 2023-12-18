@@ -92,12 +92,10 @@
 
 					<hr>
 
-                    <?php if ($config->allowRegistration) : ?>
-					<p><a href="<?= url_to('register') ?>"><?=lang('Auth.needAnAccount')?></a></p>
-<?php endif; ?>
-<?php if ($config->activeResetter): ?>
-					<p><a href="<?= url_to('forgot') ?>"><?=lang('Auth.forgotYourPassword')?></a></p>
-<?php endif; ?>
+                      
+                      <?php if ($config->activeResetter): ?>
+                        <p><a href="<?= url_to('forgot') ?>"><?=lang('Auth.forgotYourPassword')?></a></p>
+                      <?php endif; ?>
                     </div>
                   </div>
                 </div>

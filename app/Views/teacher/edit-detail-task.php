@@ -15,7 +15,7 @@
 
                <div class="mb-3">
                     <label for="nilai" class="col-form-label">Nilai</label>
-                          <textarea class="form-control" name="nilai" value=""><?= $nilai['nilai']  ?></textarea>
+                          <textarea class="form-control" name="nilai" value="" required><?= $nilai['nilai']  ?></textarea>
                 </div>
                 
                 </div>

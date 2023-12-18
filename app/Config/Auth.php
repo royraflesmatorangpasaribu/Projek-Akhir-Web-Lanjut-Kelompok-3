@@ -15,7 +15,7 @@ class Auth extends \Myth\Auth\Config\Auth
      *
      * @var string
      */
-    public $defaultUserGroup = 'parents';
+    public $defaultUserGroup;
 
     public $groups = [
         'student'    => ['name' => 'Student'],

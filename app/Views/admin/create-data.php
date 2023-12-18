@@ -25,22 +25,31 @@
                   <?php $old_name = session()->getFlashdata('name'); ?>
             <form action="<?= url_to('register') ?>" method="post" enctype="multipart/form-data">
             <?= csrf_field() ?>
-                <div class="mb-3">
+                <!-- <div class="mb-3">
                     <label for="nama" class="form-label">Username</label>
                     <input name="username" type="text"  class="form-control" id="username" placeholder="Ex : royraflmp">
-                </div>
+                </div> -->
+
+                <div class="mb-3">
+                        <label for="nama" class="form-label">Username</label>
+                        <input type="text" class="form-control <?= (empty(validation_show_error('username'))) ? '' : 'is-invalid' ?>"  name="username" value="<?= old('username')?>">
+                        <div class='invalid-feedback'>
+                            <?= validation_show_error('username'); ?>
+                        </div>
+                    </div>
+
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
-                    <input name="email" type="text" class="form-control" id="email" placeholder="Ex : royraflmp@gmail.com">
-                    
+                    <input name="email" type="text" class="form-control" id="email" placeholder="Ex : royraflmp@gmail.com">      
                 </div>
+
                 <div class="form-group">
                             <label for="password"><?=lang('Auth.password')?></label>
-                            <input type="password" name="password" class="form-control <?php if (session('errors.password')) : ?>is-invalid<?php endif ?>" placeholder="<?=lang('Auth.password')?>" autocomplete="off">
+                            <input type="password" name="password" class="form-control <?php if (session('errors.password')) : ?>is-invalid<?php endif ?>" placeholder="<?=lang('Auth.password')?>" autocomplete="off" required>
                         </div>
                 <div class="mb-3">
                     <label for="role" class="col-sm-10 col-form-label">Role</label>
-                    <select name="role" id="role" class="form-select" >
+                    <select name="role" id="role" class="form-select" required>
                         <option selected hidden value="<?= old('role') ?>">
                             <?= ($old_name == '')? 'Pilih Role' : $old_name?>
                         </option>
