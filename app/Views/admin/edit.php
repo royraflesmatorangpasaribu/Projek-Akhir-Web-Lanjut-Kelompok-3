@@ -3,11 +3,12 @@
 
 <main id="main" class="main">
     <div class="pagetitle">
-      <h1>Dashboard</h1>
+      <h1>Edit Users</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="#">Home</a></li>
-          <li class="breadcrumb-item active" href="<?php echo base_url('dashboard_super_admin'); ?>">Dashboard</li>
+          <li class="breadcrumb-item"><a href="<?php echo base_url('admin'); ?>">Dashboard</a></li>
+          <li class="breadcrumb-item active" href="">Edit Users</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -20,7 +21,7 @@
           <div class="row">
             <div class="card">
                 <div class="card-body">
-                  <h5 class="card-title">Create New Users</h5>
+                  <h5 class="card-title">Edit Users</h5>
     
                   <?php $old_name = session()->getFlashdata('name'); ?>
             <form action="<?= url_to('updateUser') ?>" method="post" enctype="multipart/form-data">

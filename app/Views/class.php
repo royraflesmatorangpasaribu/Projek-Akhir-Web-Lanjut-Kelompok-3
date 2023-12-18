@@ -5,10 +5,10 @@
 
 <main id="main" class="main">
     <div class="pagetitle">
-      <h1>Dashboard</h1>
+      <h1>Class</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item active">Class</li>
+          <li class="breadcrumb-item active" href="">Teachers</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -33,9 +33,8 @@
                       <tr>
                         <th scope="col">No</th>
                         <th scope="col">Class Name</th>
-                        <th scope="col">Capasity</th>
-                        
-                        <th scope="col">Aksi</th>
+                        <th scope="col">Capacity</th>
+                        <th scope="col">Action</th>
                       </tr>
                     </thead>
                     <tbody>

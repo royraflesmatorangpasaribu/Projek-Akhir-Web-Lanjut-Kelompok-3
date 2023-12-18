@@ -7,7 +7,7 @@
     <div class="datatable-wrapper datatable-loading no-footer sortable searchable fixed-columns">
         
     <div class="card-body">
-                <h5 class="card-title">Detailas</h5>
+                <h5 class="card-title">Details</h5>
                 <div class="datatable-top">
                     <div class="datatable-search">
                             <input class="datatable-input" placeholder="Search..." type="search" title="Search within table">
@@ -17,11 +17,11 @@
                     <thead>
                       <tr>
                         <th scope="col">No</th>
-                        <th scope="col">Kelas</th>
+                        <th scope="col">Class</th>
                         <th scope="col">Task</th>
-                        <th scope="col">Nama Siswa</th>
+                        <th scope="col">Name</th>
                         <th scope="col">File</th>
-                        <th scope="col">Nilai</th>
+                        <th scope="col">Grade</th>
                       </tr>
                     </thead>
                     <tbody>

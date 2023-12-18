@@ -68,6 +68,16 @@
         h1 {
             color: #333;
         }
+
+        .col-lg-4 {
+            flex: 0 0 auto;
+            width: 33.33333333% !important;
+            position: relative;
+            width: 100%;
+            padding-right: 0.75rem;
+            padding-left: 0.75rem;
+            padding-bottom: 1.75rem;
+        }
     </style>
 </head>
 <body>
