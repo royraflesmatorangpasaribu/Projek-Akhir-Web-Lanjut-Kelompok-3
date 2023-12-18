@@ -39,9 +39,12 @@
                         </div>
                     </div>
 
-                <div class="mb-3">
+                    <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
-                    <input name="email" type="text" class="form-control" id="email" placeholder="Ex : royraflmp@gmail.com">      
+                    <input name="email" type="text" class="form-control <?= (empty(validation_show_error('email'))) ? '' : 'is-invalid' ?>" id="email" placeholder="Ex : royraflmp@gmail.com">   
+                    <div class='invalid-feedback'>
+                            <?= validation_show_error('email'); ?>
+                        </div>   
                 </div>
 
                 <div class="form-group">
