@@ -57,7 +57,7 @@
         <li class="nav-item dropdown pe-3">
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
             <img src="<?= base_url('assets/img/foto_def.png') ?>" alt="Profile" class="rounded-circle">
-            <span class="">Super Admin</span>
+            <span class=""><?= user()->username; ?></span>
           </a><!-- End Profile Iamge Icon -->
         </li><!-- End Profile Nav -->
 
