@@ -7,8 +7,8 @@
       <h1>Teachers</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="#">Home</a></li>
-          <li class="breadcrumb-item"><a href="<?php echo base_url('admin'); ?>">Dashboard</a></li>
+          <li class="breadcrumb-item"><a href="<?php echo base_url('admin'); ?>">Home</a></li>
+          
           <li class="breadcrumb-item active" href="">Teachers</li>
         </ol>
       </nav>

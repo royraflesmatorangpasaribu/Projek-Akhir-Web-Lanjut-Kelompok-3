@@ -6,8 +6,8 @@
       <h1>New Users</h1>
       <nav>
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item"><a href="<?php echo base_url('admin'); ?>">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="<?php echo base_url('admin'); ?>">Home</a></li>
+     
             <li class="breadcrumb-item active" href="">New Users</li>
         </ol>
       </nav>
@@ -33,7 +33,7 @@
 
                 <div class="mb-3">
                         <label for="nama" class="form-label">Username</label>
-                        <input type="text" class="form-control <?= (empty(validation_show_error('username'))) ? '' : 'is-invalid' ?>"  name="username" value="<?= old('username')?>">
+                        <input type="text" class="form-control <?= (empty(validation_show_error('username'))) ? '' : 'is-invalid' ?>"  name="username" value="<?= old('username')?>" placeholder="Ex : royraflmp">
                         <div class='invalid-feedback'>
                             <?= validation_show_error('username'); ?>
                         </div>

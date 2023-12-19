@@ -108,10 +108,7 @@
                 <div class="card-body">
                   <h5 class="card-title">Detail Students</h5>
                   <div class="col-3">
-                  <div class="input-group">
-        <input type="search" class="form-control rounded" id="searchInput" placeholder="Search" aria-label="Search" aria-describedby="search-addon" oninput="searchStudents()" />
-        <button type="button" class="btn btn-outline-primary" data-mdb-ripple-init>Search</button>
-    </div>
+                 
 </div>
                 <table class="table table-borderless datatable">
                     <thead>

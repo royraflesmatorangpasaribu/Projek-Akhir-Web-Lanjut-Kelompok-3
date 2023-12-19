@@ -8,7 +8,7 @@
       <h1>Class</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item active" href="">Teachers</li>
+          <li class="breadcrumb-item active" href="">Class</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -26,7 +26,7 @@
                 
                 <div class="card-body">
                     
-                  <h5 class="card-title">Class Table</h5>
+                  <h5 class="card-title">List Class</h5>
                   <a type="button" class="btn btn-primary" href="<?php echo base_url('/create_class'); ?>">Add Class</a>
                   <table class="table table-borderless datatable">
                     <thead>
