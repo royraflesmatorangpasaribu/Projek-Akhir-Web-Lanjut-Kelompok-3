@@ -8,7 +8,9 @@
   <h1>Profile</h1>
   <nav>
     <ol class="breadcrumb">
-      <li class="breadcrumb-item active">Profile</li>
+      <li class="breadcrumb-item"><a href="<?php echo base_url('profile_admin'); ?>">Profile</a></li>
+      <li class="breadcrumb-item active" href="">Edit Profile</li> 
+
     </ol>
   </nav>
 </div><!-- End Page Title -->

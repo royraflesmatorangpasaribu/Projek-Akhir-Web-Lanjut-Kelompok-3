@@ -7,7 +7,7 @@
       <h1>Dashboard</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="<?php echo base_url('/class/create'); ?>">Class</a></li>
+          <li class="breadcrumb-item"><a href="<?php echo base_url('class'); ?>">Class</a></li>
           <li class="breadcrumb-item active">Create Class</li>
         </ol>
       </nav>

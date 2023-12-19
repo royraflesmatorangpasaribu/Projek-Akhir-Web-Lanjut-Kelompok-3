@@ -5,7 +5,7 @@
 <div id="content">
     <div class="container-fluid">
         <div class="mb-3">
-            <h1 class="h3 text-gray-800">Class</h1>
+            <h1 class="h3 text-gray-800">Profile</h1>
             <nav>
                 <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="<?php echo base_url('dashboard_students')?>">Home</a></li>

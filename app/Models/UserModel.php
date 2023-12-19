@@ -259,7 +259,7 @@ class UserModel extends Model
     }
 
     public function countTask(){
-        return $this->db->table('detail_task')
+        return $this->db->table('task')
         ->countAllResults();
     }
 
